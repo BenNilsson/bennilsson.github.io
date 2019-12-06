@@ -718,6 +718,33 @@ input, select, textarea {
 			}
 
 		}
+		
+		.image.intro {
+			display: block;
+			margin: 2.5rem 0;
+			width: 100%;
+		}
+		
+			.image.intro img {
+				width: 50%;
+			}
+			
+		@media screen and (max-width: 736px) {
+
+			.image.intro {
+				margin: 2rem 0;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.image.intro {
+				margin: 1.5rem 0;
+			}
+
+		}
+			
 
 /* List */
 
