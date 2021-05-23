@@ -87,7 +87,7 @@ body.body-mode-dark {
 }
 
 .header-color {
-	color: var(--secondary-color);
+	color: #0b9eee !important;
 }
 
 ol, ul {
