@@ -77,10 +77,6 @@
                     <!-- Navbar Brand-->
                     <a class="navbar-brand" href="#">
                         Ben Nilsson
-                        <!-- 
-                            Custom Logo
-                            <img src="assets/images/logo.svg" alt="Leverage">
-                        -->
                     </a>
 
                     <!-- Nav holder -->
@@ -127,42 +123,57 @@
             </nav>
 
         </header>
+		
+		<!-- Content -->
+        <section id="content" class="section-1 body-mode-dark single">
+            <div class="container">
+                <div class="row">
 
-		<!-- Blog -->
-        <section id="blog" class="section-4 showcase blog-grid masonry news">
-			<div class="container">
-				<div class="row intro">
-					<div class="col-12">
-						<h1 data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body" class="title effect-static-text">Blogs</h1>
-						<p data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body">Blogs are a great way of showcasing my research intersets or concluding projects.</br>
-						Below you can find my featured blogs.</p>
-					</div>
-				</div>
-			</div>
-            <div data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body" class="container">
-                <div class="row content blog-grid masonry">
+                    <!-- Main -->
                     <main class="col-12 p-0">
-                        <div class="bricklayer items columns-3">
-                            <div class="card p-0 text-center item">
-                                <a href="blog-post-studyingabroad.html">
-									<div class="image-over">
-										<img src="../assets/images/airplane.jpg" alt="Airplane Image">
-									</div>
-									<div class="card-caption col-12 p-0">
-										<div class="card-body">
-                                            <h4>Studying Abroad - My Experience</h4>
-										</div>
-									</div>
-								</a>
+                        <div class="row">
+                            <div class="col-12 align-self-center">
+                                <h2 class="mt-0 ml-0 header-color">OpenGL Game Engine</h2>
+                                <p>This project was made for my 1st year of university (level 4) for the first semester of the module known as Fundamentals of Game and Graphics System Development (FOGGS). We were tasked to create a 3D graphical scene using OpenGL and GLFW.</p>
+                                <p>This was my first ever attempt at creating a 3D scene within OpenGL. Previously, I had only used libraries such as SDL 2 to create 2D games. This 'engine' included collision responses, parent/child objects (world/local space), a skybox, text rendering, and input.</p>
+                                <p>I attempted creating an entire physics engine for this project. This was my very first attempt at implementing physics and it did not work as you would expect. I did however manage to detect collision between two types of colliders (box & circle) as well as respond to such collisions.</p>
+                                <h3>Features Included</h3>
+                                <ul>
+                                    <li>Input Handling</li>
+                                    <li>First-person Camera</li>
+                                    <li>Recreating Meshes</li>
+                                    <li>Basic Lighting</li>
+                                    <li>Hierarchical Game Objects (Parent/Child Relationship)</li>
+                                    <li>Simple Physics Engine</li>
+                                    <li>Simple ECS</li>
+                                    <li>Skybox</li>
+                                    <li>Text Rendering</li>
+                                </ul>
+                                <p>See the video below for a demonstration of the 3D scene</p>
+
+                                <!-- Image -->
+                                <div class="container">
+                                    <iframe src="https://www.youtube-nocookie.com/embed/PtVk3X6W6ZA" class="w-100" height="640" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                                </div>
+
+                                <h3>Learning Outcomes</h3>
+                                <p>This project included my first attempt at using OpenGL. I learned how to load in 3D models in form of OBJ files, light up a scene, and overall use a custom engine. Although, the engine was not anywhere near close to modern day technology, it was my first time not using a library or framework. For this project, I used my C++ knowledge that I had learned during semester 1 and used them to create something I can confidently say that I am proud of.</p>
+
+                                <h3>Tools Used</h3>
+                                <ul>
+                                    <li>OpenGL</li>
+                                    <li>Microsoft Visual Studio 2019</li>
+                                    <li>Blender</li>
+                                </ul>
                             </div>
-                        </div>
+                        </div>        
                     </main>
                 </div>
             </div>
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="section-1 odd">
+        <section id="contact" class="section-4 odd">
             <div class="container">
 				<div class="row">
 					<div class="col-12 col-md-6 align-self-start text-center text-md-left">

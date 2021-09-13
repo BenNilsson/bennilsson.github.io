@@ -1,422 +1,468 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Ben Nilsson - Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+﻿<!DOCTYPE html>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<html lang="en">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="fas fa-user fa-2x"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Ben Nilsson</h1>
-								<p>Welcome To My Portfolio. </br>
-									Danish Aspiring Games Developer - <a href="https://twitter.com/StaffsUni" target="_blank">@StaffsUni</a> Student</p>
+    <head>
+
+        <!-- ==============================================
+        Basic Page Needs
+        =============================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+
+        <title>Ben Nilsson - Portfolio</title>
+
+        <meta name="description" content="Computer Games Developer. I am a Danish aspiring games developer and content creator based in the UK. Currently studying at Staffordshire University.">
+        <meta name="subject" content="Computer Games Developer. I am a Danish aspiring games developer and content creator based in the UK. Currently studying at Staffordshire University.">
+
+        <!-- ==============================================
+        Favicons
+        =============================================== -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+
+        <!-- ==============================================
+        Vendor Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/slider.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/vendor/icons.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/animation.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/gallery.min.css">
+
+        <!-- ==============================================
+        Custom Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="assets/css/default.css">
+        <link rel="stylesheet" href="assets/css/theme-light-blue.css">
+
+        <!-- ==============================================
+        Theme Settings
+        =============================================== -->
+        <style>
+            :root {
+                --header-bg-color: #2f2f2f;
+                --nav-item-color: #f5f5f5;
+                --top-nav-item-color: #f5f5f5;
+                --hero-bg-color: #181818;
+
+                --section-1-bg-color: #2f2f2f;
+                --section-2-bg-color: #181818;
+                --section-3-bg-color: #181818;
+                --section-4-bg-color: #181818;
+                --section-5-bg-color: #181818;
+                --section-6-bg-color: #181818;
+                
+                --footer-bg-color: #2f2f2f;
+            }
+        </style>
+        
+    </head>
+
+    <body class="theme-mode-dark">
+
+        <!-- Header -->
+        <header id="header">
+
+            <!-- Navbar -->
+            <nav data-aos="zoom-out" data-aos-delay="500" class="navbar navbar-expand navbar-fixed">
+                <div class="container header">
+
+                    <!-- Navbar Brand-->
+                    <a class="navbar-brand" href="#">
+                        Ben Nilsson
+                    </a>
+
+                    <!-- Nav holder -->
+                    <div class="ml-auto"></div>
+
+                    <!-- Navbar Items -->
+                    <ul class="navbar-nav items">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item items">
+                            <a href="Portfolio/index.html" class="nav-link">Portfolio</a>
+                        </li>
+                        <li class="nav-item items">
+                            <a href="Blog/index.html" class="nav-link">Blog</a>
+                        </li>
+						<li class="nav-item items">
+                            <a href="Contact/index.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Navbar Icons -->
+                    <ul class="navbar-nav icons">
+                        <li class="nav-item social">
+                            <a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
+                        </li>
+						<li class="nav-item social">
+                            <a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
+                        </li>
+                        <li class="nav-item social">
+                            <a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
+                        </li>
+                    </ul>
+
+                    <!-- Navbar Toggle -->
+                    <ul class="navbar-nav toggle">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#menu">
+                                <i class="icon-menu m-0"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+
+        <!-- Hero -->
+        <section id="slider" class="hero p-0 odd right">
+            <div class="swiper-container no-slider animation slider-h-100">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide-center">
+						<!-- IMAGE
+                        <img data-aos="zoom-out-up" data-aos-delay="600" src="assets/images/hero-background.png" class="hero-image" alt="Hero Image">
+						-->	
+                        <div class="slide-content row" data-mask-768="70">
+                            <div class="col-12 d-flex inner">
+                                <div class="left align-self-center text-center text-md-left">
+                                    <h1 data-aos="zoom-out-up" data-aos-delay="200" class="title effect-static-text">Ben Nilsson</h1>
+									<h1 data-aos="zoom-out-up" data-aos-delay="200" class="description header-color">Computer Games Developer</h1>
+                                    <p data-aos="zoom-out-up" data-aos-delay="400" class="description">I am a Danish aspiring games developer and content creator based in the UK.<br>
+                                    Currently studying Computer Games Development at <a href="https://www.staffs.ac.uk/" target="_blank">Staffordshire University</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- About me -->
+        <section id="about" class="section-1 highlights image-right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 align-self-center text-center text-md-left">
+                        <div class="row intro">
+                            <div class="col-12 p-0">
+                                <h2 class="header-color">About Me</h2>
+                                <p>Hi, my name is Benjamin Nilsson. I am a games developer enthusiast who decided to make a major change in life and move out of country to pursue my passion for creating games. I am currently a student at Staffordshire University, studying Computer Games Development full time.</p>
+                            </div>
+                        </div>
+						<div class="row intro">
+                            <div class="col-12 p-0">
+                                <h2 class="header-color">Education</h2>
+                                <h5 class="odd">Staffordshire University <i class="header-color">2018-2022</i></h5>
+								<i class="odd">BSc in Computer Games Development</i>
+								<p>Areas explored so far: C++, C#, SDL, OpenGL, Unity, Unreal Engine 4, Blender, Networking, AI, Team Projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img src="assets/images/about-me.png" class="fit-image" alt="About Me">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio-grid" class="section-4 odd showcase portfolio blog-grid filter-section">
+            <div data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body" class="overflow-holder">
+                <div class="container">
+                    <div class="row intro">
+                        <div class="col-12">
+							<h1 data-aos="zoom-out-up" data-aos-delay="50" class="title effect-static-text">Portfolio</h1>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-12">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn active">
+                                    <input type="radio" value="all" checked class="btn-filter-item">
+                                    <span>All</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="educational" class="btn-filter-item">
+                                    <span>Educational</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="personal" class="btn-filter-item">
+                                    <span>Personal</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="gamejams" class="btn-filter-item">
+                                    <span>Game Jams</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="commercial" class="btn-filter-item">
+                                    <span>Commercial</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row items filter-items">
+
+                        <!-- CloneScape -->
+                        <div class="col-12 col-md-8 col-lg-3 item filter-item" data-groups='["educational"]'>
+                            <div class="row card p-0 text-center">
+                                <div>
+                                    <a href="Portfolio/project-clonescape.html" class="image-over">
+                                        <img src="assets/images/clonescape-icon.jpg" alt="CloneScape">
+                                    </a>
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4 class="m-0"><a href="Portfolio/project-clonescape.html">CloneScape</a></h4>
+                                        <h5 class="m-0"><a href="Portfolio/project-clonescape.html">2020</a></h5>
+                                    </div>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <p><a href="Portfolio/project-clonescape.html">University, 2nd Year, Semester 1, Unity, C#</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Orcs & Dragons TD -->
+                        <div class="col-12 col-md-8 col-lg-3 item filter-item" data-groups='["educational"]'>
+                            <div class="row card p-0 text-center">
+                                <div>
+                                    <a href="Portfolio/project-orsanddragonstd.html" class="image-over">
+                                        <img src="assets/images/orcsanddragonstd.jpg" alt="Orcs&DragonsTD">
+                                    </a>
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4 class="m-0"><a href="Portfolio/project-orsanddragonstd.html">Orcs & Dragons TD</a></h4>
+                                        <h5 class="m-0"><a href="Portfolio/project-orsanddragonstd.html">2020</a></h5>
+                                    </div>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <p><a href="Portfolio/project-orsanddragonstd.html">University, 2nd Year, Semester 1, Unity, C#, Online Multiplayer</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- OpenGL Engine -->
+                        <div class="col-12 col-md-8 col-lg-3 item filter-item" data-groups='["educational"]'>
+                            <div class="row card p-0 text-center">
+                                <div>
+                                    <a href="Portfolio/project-openglengine.html" class="image-over">
+                                        <img src="assets/images/openglengine.jpg" alt="OpenGLEngine">
+                                    </a>
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4 class="m-0"><a href="Portfolio/project-openglengine.html">OpenGL Engine</a></h4>
+                                        <h5 class="m-0"><a href="Portfolio/project-openglengine.html">2019</a></h5>
+                                    </div>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <p><a href="Portfolio/project-openglengine.html">University, 1st Year, Semester 2, OpenGL, C++</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Idle Game -->
+                        <div class="col-12 col-md-8 col-lg-3 item filter-item" data-groups='["commercial", "personal"]'>
+                            <div class="row card p-0 text-center">
+                                <div>
+                                    <a href="Portfolio/project-commercialidlegame.html" class="image-over">
+                                        <img src="assets/images/idlegame.jpg" alt="Untitled Idle Game">
+                                    </a>
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4 class="m-0"><a href="Portfolio/project-commercialidlegame.html">Untitled Idle Game</a></h4>
+                                        <h5 class="m-0"><a href="Portfolio/project-commercialidlegame.html">2021</a></h5>
+                                    </div>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <p><a href="Portfolio/project-commercialidlegame.html">Commercial, Personal, WIP, Unity, C#, Team Project</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RPG -->
+                        <div class="col-12 col-md-8 col-lg-3 item filter-item" data-groups='["educational"]'>
+                            <div class="row card p-0 text-center">
+                                <div>
+                                    <a href="Portfolio/project-theyouthfuldocuments.html" class="image-over">
+                                        <img src="assets/images/theyouthfuldocuments.jpg" alt="RPG">
+                                    </a>
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4 class="m-0"><a href="Portfolio/project-theyouthfuldocuments.html">The Youthful Documents</a></h4>
+                                        <h5 class="m-0"><a href="Portfolio/project-theyouthfuldocuments.html">2021</a></h5>
+                                    </div>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <p><a href="Portfolio/project-theyouthfuldocuments.html">University, 2nd Year, Semester 2, Unity, RPG</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Super Mario Bros Clone -->
+                        <div class="col-12 col-md-8 col-lg-3 item filter-item" data-groups='["educational"]'>
+                            <div class="row card p-0 text-center">
+                                <div>
+                                    <a href="Portfolio/project-supermarioclone.html" class="image-over">
+                                        <img src="assets/images/supermarioclone.jpg" alt="Super Mario Bros Clone">
+                                    </a>
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4 class="m-0"><a href="Portfolio/project-supermarioclone.html">Super Mario Bros Clone</a></h4>
+                                        <h5 class="m-0"><a href="Portfolio/project-supermarioclone.html">2019</a></h5>
+                                    </div>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <p><a href="Portfolio/project-supermarioclone.html">University, 1st Year, Semester 2, SDL, C++, Local Multiplayer</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- A Broken Village -->
+                        <div class="col-12 col-md-8 col-lg-3 item filter-item" data-groups='["gamejams"]'>
+                            <div class="row card p-0 text-center">
+                                <div>
+                                    <a href="Portfolio/project-abrokenvillage.html" class="image-over">
+                                        <img src="assets/images/abrokenvillage.jpg" alt="A Broken Village">
+                                    </a>
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4 class="m-0"><a href="Portfolio/project-abrokenvillage.html">A Broken Village</a></h4>
+                                        <h5 class="m-0"><a href="Portfolio/project-abrokenvillage.html">2020</a></h5>
+                                    </div>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <p><a href="Portfolio/project-abrokenvillage.html">Global Game Jam 2020, Unity, C#, Team Project</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dad's Dream -->
+                        <div class="col-12 col-md-8 col-lg-3 item filter-item" data-groups='["gamejams"]'>
+                            <div class="row card p-0 text-center">
+                                <div>
+                                    <a href="Portfolio/project-dadsdream.html" class="image-over">
+                                        <img src="assets/images/dadsdream.jpg" alt="Dad's Dream">
+                                    </a>
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4 class="m-0"><a href="Portfolio/project-dadsdream.html">Dad's Dream</a></h4>
+                                        <h5 class="m-0"><a href="Portfolio/project-dadsdream.html">2018</a></h5>
+                                    </div>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <p><a href="Portfolio/project-dadsdream.html">Global Game Jam 2018, Unity, C#</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1 filter-sizer"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section-1 odd">
+            <div class="container">
+				<div class="row">
+					<div class="col-12 col-md-6 align-self-start text-center text-md-left">
+						<div class="row intro">
+							<div class="col-12 p-0">
+
+								<div class="step-title">
+									<h2 class="header-color">Contact</h2>
+									<p>Want to get in contact with me?</p>
+									<h5 class="odd">Email: <i class="alt">benjaminnilsson1997@gmail.com</i></h5>
+									<p>You can also contact me through <br>social media if preferred.</p>
+								</div>
+								
+								<ul class="navbar-nav share-list mt-0 ml-auto">
+									<li class="nav-item">
+										<a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
+									</li>
+									<li class="nav-item">
+										<a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
+									</li>
+									<li class="nav-item">
+										<a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
+									</li>
+									<li class="nav-item">
+										<a href="https://github.com/BenNilsson" class="nav-link" target="_blank"><i class="icon-social-github"></i></a>
+									</li>
+								</ul>
 							</div>
 						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">About</a></li>
-								<!--<li><a href="#personalwork">Personal Projects</a></li>-->
-								<li><a href="#gamejams">Game Jams</a></li>
-								<li><a href="#educational">Educational</a></li>
-								<!-- Please re-enable if hosted with PHP<li><a href="#contact">Contact</a></li>-->
-								<!-- Formatting stuff, useful<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Intro -->
-							<article id="intro">
-								<h1 class="major">Intro</h1>
-								<span class="image intro"><img src="images/profile-picture.jpg" alt="" /></span>
-								<p>Hi, my name is Benjamin Nilsson. I am a games developer enthusiast who decided to make a major change in life and move out of country to pursue my passion for creating games. I am currently a student at Staffordshire University, studying Computer Games Development full time.</p>
-
-								<p>I spend the majority of my free time thinking of what projects to work on next, exploring multiple fields within the games industry, researching and expanding my knowledge within the field of games programming but most importantly, I am a games addict who loves a good title. My true dream is quite simple: I wish to create a game which I would be able to play several hours a day without getting bored. I believe that if a games developer can achieve that, they must have done well at some point.
-								</p>
-
-								<p>Thank you for checking out my portfolio! Consider having a look at some of <strong><a href="#gamejams">My Projects!</a></strong></p>
-							</article>
-
-						<!-- Educational Work -->
-							<article id="educational">
-								<h1 class="major">Educational Work</h1>
-								<h2>Super Mario Bros Clone</h2>
-								<iframe class="image main" height="415" src="https://www.youtube-nocookie.com/embed/WFsmJ1PfaSY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<p>During the second semester of our first year at university (level 4), we were assessed to create a Mario like game. I decided to stick to re-creating the original game with a few alterations. This was my first time working without a given framework. The point of the assessment was for us to increase our knowledge within C++, focusing on an object-oriented development approach. I am thrilled with the outcome of my project and have learned what to improve upon in future projects.</p>
-								<hr>
-
-								<h2>Pacman Clone</h2>
-								<iframe class="image main" height="415" src="https://www.youtube-nocookie.com/embed/XpJW_H2AzEU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<p>During the first semester of our first year at university (level 4), we were assessed to create a Pacman clone in which I attempted to be as close to the original as I could get without any prior experience in C++ whatsoever. As a first project, I am extremely proud of how far I get and it is definite proof to myself of where my passion lies at.</p>
-								<hr>
-							</article>
-
-						<!-- Game Jams -->
-							<article id="gamejams">
-								<h1 class="major">Game Jams</h1>
-								
-								<h2>A Broken Village</h2>
-								<iframe class="image main" height="415" src="https://www.youtube-nocookie.com/embed/x0P64Y9-ssQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<p>A Broken Village is a 2D top-down Stardew Valley inspired game created for the Global Game Jam 2020 where the player must repair his houses which are getting attacked by enemies. My role within this game was gameplay programming, UI design/implementation and level building.</p>
-								<p><i>Tools & Software used: Unity 2019.2, Visual Studio 2019</i><p>
-								<p><a href="https://kotie.itch.io/a-broken-village" target="_blank">View Project Here</a></p>
-								<hr>
-								
-								<h2>Steve and Dave's <br>Grassland Adventures</h2>
-								<span class="image main"><img src="images/steveanddave.png" alt="" /></span>
-								<p>Other than being the first ever team-work based project I created, Steve and Dave's Grassland Adventures was a really fun project to work on. We set a scope too big and had to drop plans but ended up creating a functioning side-scrolling RPG with a Combat System, Enemy AI, Dialog System and much more. My contribution towards this project was all of the programming aspects done using C# as well as teaching the engine to co-member of the team.</p>
-								<p><i>Tools & Software used: Unity 2018</i><p>
-								<p><a href="https://kotie.itch.io/grassland-adventures" target="_blank">View Project Here</a></p>
-								<hr>
-
-								<h2>Dad's Dream</h2>
-								<span class="image main"><img src="images/dadsdream.png" alt="" /></span>
-								<p>With only 8 hours left of the Global Game Jam 2018 and me scratching my project, I decided to work on Dad's Dream: A top-down 2D collection game where you, the son, is asked to collect several items spawning around the room by your father. My aim with this project was to make a silly yet fun game and it had great response from many participants at the game jam site. A true focus on gameplay.</p>
-								<p><i>Tools & Software used: Unity 2018</i><p>
-								<p><a href="https://kotie.itch.io/dads-dream" target="_blank">View Project Here</a></p>
-							</article>
-
-						<!-- Personal Work -->
-							<article id="personalwork">
-								<h1 class="major">Personal Work</h1>
-								<h2>PLACEHOLDER</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<hr>
-
-								<h2>PLACEHOLDER</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-							</article>
-
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
-							</article>
-
-						<!-- Contact -->
-						<!-- I have included a contact form linked to a PHP document which would allow emails to be sent from within the form.
-							Sadly, GitHub Pages does not allow you to host PHP on their servers and this will therefore be enabled
-							once I have found an alternative way of hosting my site -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="submit.php">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" required>
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" required>
-										</div>
-										<div class="field">
-											<label for="subject">Subject</label>
-											<textarea name="subject" id="subject" rows="1" required></textarea>
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4" required></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" name="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
 					</div>
+				</div>
+            </div>
+        </section>
+        <!-- #region Global ============================ -->
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="https://twitter.com/BenNilsson97" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
-							<li><a href="mailto:benjaminnilsson1997@gmail.com?Subject=Message%20To%20Ben" class="far fa-envelope"></a></li>
-							<li><a href="https://www.linkedin.com/in/benjamin-nilsson" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/BenNilsson" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-						</ul>
-					</footer>
+        <!-- Modal [responsive menu] -->
+        <div id="menu" class="p-0 modal fade" role="dialog" aria-labelledby="menu" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-slideout" role="document">
+                <div class="modal-content full">
+                    <div class="modal-header" data-dismiss="modal">
+                        Menu <i class="icon-close"></i>
+                    </div>
+                    <div class="menu modal-body">
+                        <div class="row w-100">
+                            <div class="items p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                            <div class="contacts p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-			</div>
+        <!-- Scroll [to top] -->
+        <div id="scroll-to-top" class="scroll-to-top">
+            <a href="#header" class="smooth-anchor">
+                <i class="icon-arrow-up"></i>
+            </a>
+        </div>        
 
-		<!-- BG -->
-			<div id="bg"></div>
+        <!-- ==============================================
+        Vendor Scripts
+        =============================================== -->
+        <script src="assets/js/vendor/jquery.min.js"></script>
+        <script src="assets/js/vendor/jquery.easing.min.js"></script>
+        <script src="assets/js/vendor/jquery.inview.min.js"></script>
+        <script src="assets/js/vendor/popper.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/vendor/ponyfill.min.js"></script>
+        <script src="assets/js/vendor/slider.min.js"></script>
+        <script src="assets/js/vendor/animation.min.js"></script>
+        <script src="assets/js/vendor/progress-radial.min.js"></script>
+        <script src="assets/js/vendor/bricklayer.min.js"></script>
+        <script src="assets/js/vendor/gallery.min.js"></script>
+        <script src="assets/js/vendor/shuffle.min.js"></script>
+        <script src="assets/js/vendor/particles.min.js"></script>
+        <script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        <!-- #endregion Global ========================= -->
 
-	</body>
+    </body>
 </html>
