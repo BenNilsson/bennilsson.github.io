@@ -165,7 +165,7 @@
 								<p>If you have any suggestions on how to approach this better or how to optimise this system, please send me an email. I would love to discuss this!</p>
 								
 								<h3>Setting up the Quest class</h3>
-								<p>Firstly, we created the classes necessary to set up the Quest itself. The following classes needed are:
+								<p>Firstly, we create the classes necessary to set up the Quest itself. The following classes needed are:
 								<span class="class">Quest.cs</span> and <span class="class">QuestComponent.cs</span></p>
 								<ul class="code-block">
                                     <li class="">
@@ -200,8 +200,8 @@ namespace QuestSystem
 }</code></pre>
 								</li>
                                 </ul>
-								<p>The Quest class will keep track of the quests components and its active state. It will not be updating anything itself and will only serve as a holder for all components.
-								We start off by giving the basic information that we need. The name, id, status, & the list of components. The list will be populated later.</p>
+								<p>The Quest class will keep track of the quest's components and its active state. It will not be updating anything itself and will only serve as a holder for all components.
+								We start off by giving the basic information that we need; the name, id, status, & the list of components. The list will be populated later.</p>
 								
 								<ul class="code-block">
                                     <li class="">
@@ -273,9 +273,26 @@ namespace QuestSystem
 }</code></pre>
                                     </li>
                                 </ul>
-								<p>Before we can create any quest components in the editor, we must first create an example of a quest component. For now, let's focus
+								<ul class="code-block" style="margin-bottom:15px;">
+                                    <li class="">
+									<h4>SO_QuestComponent.cs</h4>
+<pre class="cscode"><code>using UnityEngine;
+
+namespace QuestSystem
+{
+    public abstract class SO_QuestComponent : ScriptableObject
+    {
+        [Header("Component Settings")]
+        public string componentName;
+        [TextArea(2, 10)]
+        public string description;
+    }
+}</code></pre>
+                                    </li>
+                                </ul>
+								<p>Before we can create any quest components in the editor, we must first create a quest component. For now, let's focus
 								on EnemyKilled. Create a new class called <span class="class">QC_EnemyKilled</span> and another called <span class="class">SO_QC_EnemyKilled</span> (QC standing for QuestComponent).
-								For now, we will only insert the data we need and will focus on how to detect enemies killed later on.</p>
+								The class will be populated with the variables required to track a certain enemy (in this instance using int ids) and the count of enemies killed. We will focus on how to detect enemies killed later on.</p>
 								
 								<ul class="code-block" style="margin-bottom:15px;">
                                     <li class="">
@@ -649,8 +666,8 @@ namespace QuestSystem
 								<p>One thing that I left out was the ability to start a quest. This function really depends on what sort of quest system you are aiming for.
 								<br>The way I usually set up my quest and components is that once you have completed one component, the next enables (as seen in Quest.cs). Some games feature
 								quests where two components are enabled at the same time (such as kill and collect items). If you wish to create a quest like that,
-								simply enable the required components when you start the quest. In this example, starting a quest will simply enable the first component.</p>
-								<p>Starting by adding the following method to <span class="class">Quest.cs</span>.</p>
+								simply enable the required components when you start the quest. In this example, starting a quest will enable the first component.</p>
+								<p>Start by adding the following method to <span class="class">Quest.cs</span>.</p>
 								
 								<ul class="code-block">
 <pre class="cscode"><code>public void Activate()
@@ -663,7 +680,7 @@ namespace QuestSystem
 
 								</ul>
 								<p>Next up, we need a way to control the quests in the game, keep track of completed ones, and so on. This example will use a simple approach that initializes all
-								quests when the game is started. If you wish so, you can of course serialize the data required and load quests through a save system instead.</p>
+								quests when the game is started.</p>
 								<p>Start by creating a class called <span class="class">QuestManager.cs</span>. In there, we can store all quests and add functionality for starting quests.
 								<br>In this example, I have let the QuestManager start the first quest in the list. This could be changed to instead use events on NPCs or such.</p>
 								
@@ -741,7 +758,7 @@ namespace QuestSystem
 public static void TriggerQuestCompleted(Quest quest) { OnQuestCompleted?.Invoke(quest); }
 </code></pre>
                                 </ul>
-								<p>Finally, we can test our quests! I've thrown together a little script to trigger the enemy event when you click a cube in the scene.
+								<p>Finally, we can test our quests! I've thrown together a little script to trigger the enemy event when you click a GameObject with a collider in the scene.
 								<br>Make sure to create a new GameObject and add <span class="class">QuestManager.cs</span> to it. Afterward, set up the list of quests to load and hit play.
 								<br>I have also included the example of clicking the enemy below if you wish to test it as well.</p>
 								
