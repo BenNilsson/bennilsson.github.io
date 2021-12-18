@@ -165,7 +165,7 @@
 								<p>If you have any suggestions on how to approach this better or how to optimise this system, please send me an email. I would love to discuss this!</p>
 								
 								<h3>Setting up the Quest class</h3>
-								<p>Firstly, we created the classes neccessary to set up the Quest itself. The following classes needed are:
+								<p>Firstly, we created the classes necessary to set up the Quest itself. The following classes needed are:
 								<span class="class">Quest.cs</span> and <span class="class">QuestComponent.cs</span></p>
 								<ul class="code-block">
                                     <li class="">
@@ -249,12 +249,12 @@ namespace QuestSystem
                                     </li>
                                 </ul>
 								<p>The component class will be marked as abstract since the idea is that we will be creating a new class for every component type.
-								This way, we can set up neccessary events for each action required. In this example, we will be focusing on <b>EnemyKilled</b> and <b>ItemCollected</b>.
+								This way, we can set up necessary events for each action required. In this example, we will be focusing on <b>EnemyKilled</b> and <b>ItemCollected</b>.
 								two common gameplay mechanics that may be part of quests.</p>
                                 
                                 <h3>Creating Data in The Editor</h3>
-								<p>In order to create quests easily, we will be taking advantage of scriptable objects. Start by creating two classes: <span class="class">SO_Quest</span> and <span class="class">SO_QuestComponent</span>.
-								Both of these classes are fairly simply as all they do is contain the initial data. SO_QuestComponent will later be overwritten by each component.</p>
+								<p>To create quests easily, we will be taking advantage of scriptable objects. Start by creating two classes: <span class="class">SO_Quest</span> and <span class="class">SO_QuestComponent</span>.
+								Both of these classes are fairly simple as all they do is contain the initial data. SO_QuestComponent will later be overwritten by each component.</p>
 								<ul class="code-block" style="margin-bottom:15px;">
                                     <li class="">
 									<h4>SO_Quest.cs</h4>
@@ -334,8 +334,8 @@ namespace QuestSystem
 									</li>
                                 </ul>
 								
-								<p>With the basic implementation of a quest and components created, we are ready to set up the events and component. Before that though, we will need
-								to create the data in the editor. Create a new folder somewhere within the assets folder called Quests. In there, create two scriptable objects: A quest and a quest component of type enemy killed.</p>
+								<p>With the basic implementation of a quest and components created, we are ready to set up the events and components. Before that though, we will need
+								to create the data in the editor. Create a new folder somewhere within the assets folder called Quests. In there, create two scriptable objects: A quest and a quest component of type EnemyKilled.</p>
 								
 								<!-- Image -->
                                 <div class="gallery" style="margin-top:15px;">
@@ -662,8 +662,8 @@ namespace QuestSystem
 }</code></pre>
 
 								</ul>
-								<p>Next up, we need a way to control the quests in the game, keep track of completed ones and so on. This example will use a simple approach that initializes all
-								quests when the game is started. If you wish so, you can of course serialize data required and load quests through a save system instead.</p>
+								<p>Next up, we need a way to control the quests in the game, keep track of completed ones, and so on. This example will use a simple approach that initializes all
+								quests when the game is started. If you wish so, you can of course serialize the data required and load quests through a save system instead.</p>
 								<p>Start by creating a class called <span class="class">QuestManager.cs</span>. In there, we can store all quests and add functionality for starting quests.
 								<br>In this example, I have let the QuestManager start the first quest in the list. This could be changed to instead use events on NPCs or such.</p>
 								
@@ -742,7 +742,7 @@ public static void TriggerQuestCompleted(Quest quest) { OnQuestCompleted?.Invoke
 </code></pre>
                                 </ul>
 								<p>Finally, we can test our quests! I've thrown together a little script to trigger the enemy event when you click a cube in the scene.
-								<br>Make sure to create a new GameObject and add <span class="class">QuestManager.cs</span> to it. Afterwards, set up the list of quests to load and hit play.
+								<br>Make sure to create a new GameObject and add <span class="class">QuestManager.cs</span> to it. Afterward, set up the list of quests to load and hit play.
 								<br>I have also included the example of clicking the enemy below if you wish to test it as well.</p>
 								
 								<ul class="code-block">
@@ -920,7 +920,7 @@ namespace QuestSystem
 								<p>That is everything for this long tutorial! I hope you found it useful. Again, feel free to contact me by email or social media if you wish to
 								discuss this system further. I am debating creating a custom editor for this as well or simply expanding the system to include more useful scenarios.</p>
 								
-								<p>Thank you! Byee</p>
+								<p>Thank you for reading this tutorial!</p>
                             </div>
                         </div>        
                     </main>
