@@ -1,0 +1,19 @@
+pre code.hljs{display:block;overflow-x:auto;}code.hljs{padding:3px 5px}.hljs{color:#eaeaea;}
+.hljs-keyword, .hljs-link, .hljs-literal, .hljs-section, .hljs-selector-tag {
+    color: #bb85de
+}
+.hljs-addition, .hljs-built_in, .hljs-bullet, .hljs-symbol, .hljs-template-tag, .hljs-template-variable, .hljs-type, .hljs-variable {
+    color: #bb85de
+}
+.hljs-attribute, .hljs-title {
+    color: #f4b64d
+}
+.hljs-string {
+    color: #b1d67a
+}
+.hljs-comment, .hljs-quote {
+    color: #616161
+}
+.hljs-deletion, .hljs-meta  {
+    color: #f4b64d
+}.hljs-doctag,.hljs-keyword,.hljs-literal,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-strong,.hljs-title,.hljs-type{font-weight:700}.hljs-emphasis{font-style:italic}

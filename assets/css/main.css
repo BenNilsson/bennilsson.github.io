@@ -863,10 +863,46 @@ aside {
     margin-top: 35px;
 }
 
+p > code,
+li > code,
+dd > code,
+td > code {
+	background-color: var(--secondary-bg-color-3);
+	word-wrap: break-word;
+	box-decoration-break: clone;
+	padding: .1rem .3rem .2rem;
+	border-radius: .2rem;
+}
+
+pre code {
+  display: block;
+  background: none;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  min-width: 100px;
+}
+
+.code-block {
+	list-style: none;
+	width: 100%;
+	background-color: var(--primary-bg-color-2);
+	padding:5px;
+	padding-left:20px;
+}
+
 .odd .post-holder,
 .body-mode-dark .post-holder {
     border-left: 5px solid var(--primary-color);
     background-color: var(--secondary-bg-color-3);
+}
+
+.body-mode-dark .code-block {
+    background-color: var(--secondary-bg-color-3);
+}
+
+.no-border {
+	border: none;
 }
 
 .posted-on a:not(.btn) {

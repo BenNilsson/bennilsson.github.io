@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- ==============================================
+        Basic Page Needs
+        =============================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+
+        <title>Ben Nilsson - Portfolio</title>
+
+        <meta name="description" content="Computer Games Developer. I am a Danish aspiring games developer and content creator based in the UK. Currently studying at Staffordshire University.">
+        <meta name="subject" content="Computer Games Developer. I am a Danish aspiring games developer and content creator based in the UK. Currently studying at Staffordshire University.">
+
+        <!-- ==============================================
+        Favicons
+        =============================================== -->
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/apple-touch-icon-114x114.png">
+
+        <!-- ==============================================
+        Vendor Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/vendor/slider.min.css">
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/css/vendor/icons.min.css">
+        <link rel="stylesheet" href="../assets/css/vendor/animation.min.css">
+        <link rel="stylesheet" href="../assets/css/vendor/gallery.min.css">
+
+        <!-- ==============================================
+        Custom Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="../assets/css/default.css">
+        <link rel="stylesheet" href="../assets/css/theme-light-blue.css">
+
+		<!-- =====================================
+		Custom Code Highlighting
+		========================= -->
+		<link rel="stylesheet" href="../assets/highlight/styles/rider.dark.css">
+		<script src="../assets/highlight/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
+
+        <!-- ==============================================
+        Theme Settings
+        =============================================== -->
+        <style>
+            :root {
+                --header-bg-color: #2f2f2f;
+                --nav-item-color: #f5f5f5;
+                --top-nav-item-color: #f5f5f5;
+                --hero-bg-color: #181818;
+
+                --section-1-bg-color: #2f2f2f;
+                --section-2-bg-color: #181818;
+                --section-3-bg-color: #181818;
+                --section-4-bg-color: #181818;
+                --section-5-bg-color: #181818;
+                --section-6-bg-color: #181818;
+                
+                --footer-bg-color: #2f2f2f;
+            }
+        </style>
+        
+		<style>
+		.class {
+			color: #f4b64d;
+		}
+		</style>
+		
+    </head>
+
+    <body class="theme-mode-dark">
+
+        <!-- Header -->
+        <header id="header">
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand navbar-fixed">
+                <div class="container header">
+
+                    <!-- Navbar Brand-->
+                    <a class="navbar-brand" href="#">
+                        Ben Nilsson
+                        <!-- 
+                            Custom Logo
+                            <img src="assets/images/logo.svg" alt="Leverage">
+                        -->
+                    </a>
+
+                    <!-- Nav holder -->
+                    <div class="ml-auto"></div>
+
+                    <!-- Navbar Items -->
+                    <ul class="navbar-nav items">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../Portfolio/index.html" class="nav-link">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../Blog/index.html" class="nav-link">Blog</a>
+                        </li>
+						<li class="nav-item">
+                            <a href="../Contact/index.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Navbar Icons -->
+                    <ul class="navbar-nav icons">
+                        <li class="nav-item social">
+                            <a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
+                        </li>
+						<li class="nav-item social">
+                            <a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
+                        </li>
+                        <li class="nav-item social">
+                            <a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
+                        </li>
+                    </ul>
+
+                    <!-- Navbar Toggle -->
+                    <ul class="navbar-nav toggle">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#menu">
+                                <i class="icon-menu m-0"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+		
+		<!-- Content -->
+        <section id="content" class="section-1 body-mode-dark single">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Main -->
+                    <main class="col-12 p-0">
+                        <div class="row">
+                            <div class="col-12 align-self-center">
+                                <h2 class="mt-0 ml-0 header-color">Tutorial - Quest System in Unity</h2>
+
+                                <!-- Post Holder -->
+                                <ul class="post-holder">
+                                    <li class="post-meta-item">
+                                        <time class="date"><span class="posted-on">Posted on <time class="entry-date published updated header-color">December 18, 2021</time></span></time>
+                                    </li>
+                                </ul>
+								<p>This tutorial will be covering a quest system that I have personally used for several projects now.<br>
+								The Quest System will be using events to trigger when completed. The idea is that a quest is set up with
+								multiple quest components. A component is essentially the quest objective, for instance, killing an enemy or collecting an item.
+								The system will be using Scriptable Objects to allow for easy quest creation once the system is complete.</p>
+								<p>If you have any suggestions on how to approach this better or how to optimise this system, please send me an email. I would love to discuss this!</p>
+								
+								<h3>Setting up the Quest class</h3>
+								<p>Firstly, we created the classes neccessary to set up the Quest itself. The following classes needed are:
+								<span class="class">Quest.cs</span> and <span class="class">QuestComponent.cs</span></p>
+								<ul class="code-block">
+                                    <li class="">
+									<h4>Quest.cs</h4>
+<!-- QUEST.CS -->
+<pre class="cscode"><code>using System;
+using System.Collections.Generic;
+
+namespace QuestSystem
+{
+    public enum QuestStatus { Inactive, Active, Completed };
+    // Inactive     - Quest has not been started
+    // Active       - Quest is current in progress
+    // Completed    - Quest has been completed
+
+    public class Quest
+    {
+        public event Action&lt;Quest> OnQuestCompleted;
+        
+        public readonly string QuestName;
+        public int QuestID;
+        public QuestStatus QuestStatus;
+        public List&lt;QuestComponent> QuestComponents = new List&lt;QuestComponent>();
+        
+        public Quest(string name, int id)
+        {
+            QuestName = name;
+            QuestID = id;
+            QuestStatus = QuestStatus.Inactive;
+        }
+    }
+}</code></pre>
+								</li>
+                                </ul>
+								<p>The Quest class will keep track of the quests components and its active state. It will not be updating anything itself and will only serve as a holder for all components.
+								We start off by giving the basic information that we need. The name, id, status, & the list of components. The list will be populated later.</p>
+								
+								<ul class="code-block">
+                                    <li class="">
+									<h4>QuestComponent.cs</h4>
+<!-- QUESTCOMPONENT.CS -->
+<pre class="cscode"><code>using System;
+using UnityEngine;
+
+namespace QuestSystem
+{
+    public abstract class QuestComponent
+    {
+        public enum QuestComponentType
+        {
+            EnemyKilled,
+            ItemCollected
+            // ADD CUSTOM TYPES BELOW
+        }
+        
+        public event Action&lt;QuestComponent> OnComponentCompleted;
+        protected void TriggerComponentCompleted(QuestComponent questComponent) { OnComponentCompleted?.Invoke(questComponent); }
+
+        public string ComponentName;
+        public string ComponentDescription;
+        public QuestComponentType ComponentType;
+
+        public QuestComponent(string name, string description)
+        {
+            ComponentName = name;
+            ComponentDescription = description;
+        }
+
+        public virtual void EnableComponent()
+        {
+            Debug.unityLogger.Log($"{ComponentName} has been enabled.");
+        }
+
+        public virtual void MarkCompleted()
+        {
+            Debug.unityLogger.Log($"{ComponentName} has been completed.");
+        }
+    }
+}
+</code></pre>
+                                    </li>
+                                </ul>
+								<p>The component class will be marked as abstract since the idea is that we will be creating a new class for every component type.
+								This way, we can set up neccessary events for each action required. In this example, we will be focusing on <b>EnemyKilled</b> and <b>ItemCollected</b>.
+								two common gameplay mechanics that may be part of quests.</p>
+                                
+                                <h3>Creating Data in The Editor</h3>
+								<p>In order to create quests easily, we will be taking advantage of scriptable objects. Start by creating two classes: <span class="class">SO_Quest</span> and <span class="class">SO_QuestComponent</span>.
+								Both of these classes are fairly simply as all they do is contain the initial data. SO_QuestComponent will later be overwritten by each component.</p>
+								<ul class="code-block" style="margin-bottom:15px;">
+                                    <li class="">
+									<h4>SO_Quest.cs</h4>
+<pre class="cscode"><code>using System.Collections.Generic;
+using UnityEngine;
+
+namespace QuestSystem
+{
+    [CreateAssetMenu(fileName = "Quest", menuName = "QuestSystem/Quest", order = 0)]
+    public class SO_Quest : ScriptableObject
+    {
+        public string questName;
+        public int id;
+        public List&lt;SO_QuestComponent> components;
+    }
+}</code></pre>
+                                    </li>
+                                </ul>
+								<p>Before we can create any quest components in the editor, we must first create an example of a quest component. For now, let's focus
+								on EnemyKilled. Create a new class called <span class="class">QC_EnemyKilled</span> and another called <span class="class">SO_QC_EnemyKilled</span> (QC standing for QuestComponent).
+								For now, we will only insert the data we need and will focus on how to detect enemies killed later on.</p>
+								
+								<ul class="code-block" style="margin-bottom:15px;">
+                                    <li class="">
+									<h4>QC_EnemyKilled.cs</h4>
+<pre class="cscode"><code>using UnityEngine;
+
+namespace QuestSystem
+{
+    public class QC_EnemyKilled : QuestComponent
+    {
+        private int _enemyID;
+        private int _killCount;
+        private int _killsNeeded;
+    
+        public QC_EnemyKilled(string name, string description, int enemyID, int killsNeeded) : base(name, description)
+        {
+            _enemyID = enemyID;
+            _killsNeeded = killsNeeded;
+            _killCount = 0;
+            ComponentType = QuestComponentType.EnemyKilled;
+        }
+
+        public override void EnableComponent()
+        {
+            base.EnableComponent();
+            // Subscribe to enemy kill event
+        }
+
+        public override void MarkCompleted()
+        {
+            base.MarkCompleted();
+            // Unsubscribe from enemy kill event
+        }
+    }
+}
+
+</code></pre>
+									</li>
+                                </ul>
+								
+								<ul class="code-block">
+                                    <li class="">
+									<h4>SO_QC_EnemyKilled.cs</h4>
+<pre class="cscode"><code>using UnityEngine;
+
+namespace QuestSystem
+{
+    [CreateAssetMenu(fileName = "QC_EnemyKilled", menuName = "QuestSystem/Components/QC_EnemyKilled", order = 1)]
+    public class SO_QC_EnemyKilled : SO_QuestComponent
+    {
+        [Header("Enemy Settings")]
+        public int enemyID;
+        public int killsNeeded; 
+    }
+}</code></pre>
+									</li>
+                                </ul>
+								
+								<p>With the basic implementation of a quest and components created, we are ready to set up the events and component. Before that though, we will need
+								to create the data in the editor. Create a new folder somewhere within the assets folder called Quests. In there, create two scriptable objects: A quest and a quest component of type enemy killed.</p>
+								
+								<!-- Image -->
+                                <div class="gallery" style="margin-top:15px;">
+                                    <a href="../assets/images/tutorial-questsystem/scriptableobjectsmenu.png">
+                                        <img src="../assets/images/tutorial-questsystem/scriptableobjectsmenu.png" class="w-100">
+                                    </a>
+									<a href="../assets/images/tutorial-questsystem/scriptableobjects.png">
+                                        <img src="../assets/images/tutorial-questsystem/scriptableobjects.png" class="w-100" style="margin-top:15px;">
+                                    </a>
+                                </div>
+								<p>Make sure to set up the scriptable objects to match the images above. You can obviously get as creative as you want to. I opted for rats because it's never been
+								done before in games... I know! What an exciting quest.</p>
+								
+								<h3>Registering Quest Components & Events</h3>
+								<p>Since we now have access to custom quest components, we can finally register them inside of our quests!</p>
+								<p>We start by looping through the list of components in our scriptable object. To do this, open <span class="class">Quest.cs</span> where we can now, using the factory pattern
+								create a quest component based on the type received from the scriptable object. We are going to modify the script to add the factory and the initialization of the components.
+								We will also have to modify <span class="class">QC_EnemyKilled</span> to implement the factory.</p>
+								
+								<ul class="code-block">
+                                    <li class="">
+									<h4>Quest.cs</h4>
+<pre class="cscode"><code>using System;
+using System.Collections.Generic;
+
+namespace QuestSystem
+{
+    public enum QuestStatus { Inactive, Active, Completed };
+    // Inactive     - Quest has not been started
+    // Active       - Quest is current in progress
+    // Completed    - Quest has been completed
+
+    public class Quest
+    {
+        public event Action<Quest> OnQuestCompleted;
+        
+        public readonly string QuestName;
+        public int QuestID;
+        public QuestStatus QuestStatus;
+        public List&lt;QuestComponent> QuestComponents = new List<QuestComponent>();
+
+        private readonly Dictionary&lt;QuestComponent.QuestComponentType, System.Func&lt;SO_QuestComponent, QuestComponent&gt;&gt 
+		_componentFactory = new Dictionary&lt;QuestComponent.QuestComponentType, Func&lt;SO_QuestComponent, QuestComponent&gt;&gt;()
+        {
+            { QuestComponent.QuestComponentType.EnemyKilled, QC_EnemyKilled.CreateFactory }
+        };
+
+        public Quest(string name, int id, List<SO_QuestComponent> questComponents)
+        {
+            QuestName = name;
+            QuestID = id;
+            QuestStatus = QuestStatus.Inactive;
+			
+            if (questComponents.Count <= 0)
+                return;
+
+            foreach (SO_QuestComponent questComponent in questComponents)
+            {
+                QuestComponent qcTemp = null;
+
+                if (_componentFactory.ContainsKey(questComponent.questType))
+                    qcTemp = _componentFactory[questComponent.questType](questComponent);
+                
+                if (qcTemp == null)
+                    return;
+                
+                QuestComponents.Add(qcTemp);
+            }
+        }
+    }
+}
+</code></pre>
+									</li>
+                                </ul>
+								<ul class="code-block" style="margin-top:15px;">
+                                    <li class="">
+									<h4>QC_EnemyKilled.cs</h4>
+<pre class="cscode"><code>using UnityEngine;
+
+namespace QuestSystem
+{
+    public class QC_EnemyKilled : QuestComponent
+    {
+        private int _enemyID;
+        private int _killCount;
+        private int _killsNeeded;
+    
+        public QC_EnemyKilled(string name, string description, int enemyID, int killsNeeded) : base(name, description)
+        {
+            _enemyID = enemyID;
+            _killsNeeded = killsNeeded;
+            _killCount = 0;
+            ComponentType = QuestComponentType.EnemyKilled;
+        }
+        
+        public static QuestComponent CreateFactory(SO_QuestComponent so_questComponent)
+        {
+            SO_QC_EnemyKilled localQuestComponent = (SO_QC_EnemyKilled)so_questComponent;
+
+            return new QC_EnemyKilled(
+                localQuestComponent.componentName,
+                localQuestComponent.description,
+                localQuestComponent.enemyID,
+                localQuestComponent.killsNeeded);
+        }
+
+        public override void EnableComponent()
+        {
+            base.EnableComponent();
+            // Subscribe to enemy kill event
+        }
+
+        public override void MarkCompleted()
+        {
+            base.MarkCompleted();
+            // Unsubscribe from enemy kill event
+        }
+    }
+}
+</code></pre>
+									</li>
+                                </ul>
+								
+								<p>Since we are already inside of the Quest class, we can also deal with what happens when a component has been completed.<br>
+								Add the following code to the <span class="class">Quest.cs</span> class. Make sure to include the new global variable <b>_componentsCompleted</b>.</p>
+								
+								<ul class="code-block">
+                                    <li class="">
+									<h4>Quest.cs</h4>
+<pre class="cscode"><code>using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace QuestSystem
+{
+    public enum QuestStatus { Inactive, Active, Completed };
+    // Inactive     - Quest has not been started
+    // Active       - Quest is current in progress
+    // Completed    - Quest has been completed
+
+    public class Quest
+    {
+        public event Action&lt;Quest> OnQuestCompleted;
+        
+        public readonly string QuestName;
+        public int QuestID;
+        public QuestStatus QuestStatus;
+        public List&lt;QuestComponent> QuestComponents = new List&lt;QuestComponent>();
+
+        private int _componentsCompleted;
+
+        private readonly Dictionary&lt;QuestComponent.QuestComponentType, System.Func&lt;SO_QuestComponent, QuestComponent>> _componentFactory 
+		= new Dictionary&lt;QuestComponent.QuestComponentType, Func&lt;SO_QuestComponent, QuestComponent>>()
+        {
+            { QuestComponent.QuestComponentType.EnemyKilled, QC_EnemyKilled.CreateFactory }
+        };
+
+        public Quest(string name, int id, List<SO_QuestComponent> questComponents)
+        {
+            QuestName = name;
+            QuestID = id;
+            QuestStatus = QuestStatus.Inactive;
+            
+            // Don't continue if no components are added to the list
+            if (questComponents.Count <= 0)
+                return;
+
+            foreach (SO_QuestComponent questComponent in questComponents)
+            {
+                QuestComponent qcTemp = null;
+
+                if (_componentFactory.ContainsKey(questComponent.questType))
+                    qcTemp = _componentFactory[questComponent.questType](questComponent);
+                
+                if (qcTemp == null)
+                    return;
+                
+                QuestComponents.Add(qcTemp);
+				
+                // Subscribe to the component so that the Quest knows when the component has been completed.
+                qcTemp.OnComponentCompleted += ComponentCompleted;
+            }
+        }
+
+        ~Quest()
+        {
+            // Unsubscribe all components from the onComponentComplete event
+            for (int i = QuestComponents.Count - 1; i >= 0; i--)
+            {
+                QuestComponents[i].OnComponentCompleted -= ComponentCompleted;
+                QuestComponents[i] = null;
+            }
+        }
+
+        private void ComponentCompleted(QuestComponent questComponent)
+        {
+            _componentsCompleted++;
+            
+            Debug.unityLogger.Log($"{QuestName}: Component '{questComponent.ComponentName}' was completed");
+
+            if (_componentsCompleted == QuestComponents.Count)
+            {
+                // Quest has been completed
+                QuestStatus = QuestStatus.Completed;
+                OnQuestCompleted?.Invoke(this);
+            }
+            else
+            {
+                // Enable next component
+                if (QuestComponents.Count > _componentsCompleted)
+                    QuestComponents[_componentsCompleted].EnableComponent();
+            }
+        }
+    }
+}
+</code></pre>
+									</li>
+                                </ul>
+								
+								<p>In order for the component to tie itself together with gameplay, we need an event for the component to subscribe to. For this example,
+								I have gone ahead and created a new class called <span class="class">QuestEvents.cs</span> where we can insert all static quest-related events such as enemies killed.
+								<br>This is where you can tie your own systems/events into the component. Remember, this is just an example!</p>
+								
+								<ul class="code-block">
+                                    <li class="">
+									<h4>QuestEvents.cs</h4>
+<pre class="cscode"><code>using System;
+
+namespace QuestSystem
+{
+    public static class QuestEvents
+    {
+        public static event Action&lt;int> OnEnemyKilled;
+        public static void TriggerEnemyKilled(int enemyID) { OnEnemyKilled?.Invoke(enemyID); }
+    }
+}
+
+</code></pre>
+									</li>
+                                </ul>
+								<p>Using this static event, we can update the <span class="class">EnemyKilled</span> component when needed. We subscribe to the event and update the data needed.
+								<br>Once we have reached the amount of kills needed, we mark the component as completed.</p>
+								
+								<ul class="code-block">
+                                    <li class="">
+									<h4>QC_EnemyKilled.cs</h4>
+<pre class="cscode"><code>using UnityEngine;
+
+namespace QuestSystem
+{
+    public class QC_EnemyKilled : QuestComponent
+    {
+        private int _enemyID;
+        private int _killCount;
+        private int _killsNeeded;
+    
+        public QC_EnemyKilled(string name, string description, int enemyID, int killsNeeded) : base(name, description)
+        {
+            _enemyID = enemyID;
+            _killsNeeded = killsNeeded;
+            _killCount = 0;
+            ComponentType = QuestComponentType.EnemyKilled;
+        }
+        
+        public static QuestComponent CreateFactory(SO_QuestComponent so_questComponent)
+        {
+            SO_QC_EnemyKilled localQuestComponent = (SO_QC_EnemyKilled)so_questComponent;
+
+            return new QC_EnemyKilled(
+                localQuestComponent.componentName,
+                localQuestComponent.description,
+                localQuestComponent.enemyID,
+                localQuestComponent.killsNeeded);
+        }
+
+        public override void EnableComponent()
+        {
+            base.EnableComponent();
+            // Subscribe to enemy kill event
+            QuestEvents.OnEnemyKilled += EnemyKilled;
+        }
+
+        public override void MarkCompleted()
+        {
+            base.MarkCompleted();
+            // Unsubscribe from enemy kill event
+            QuestEvents.OnEnemyKilled -= EnemyKilled;
+        }
+        
+        private void EnemyKilled(int enemyID)
+        {
+            if (_enemyID != enemyID)
+                return;
+
+            _killCount++;
+            
+            Debug.unityLogger.Log($"{ComponentName}: Enemy Type {enemyID} was killed {_killCount}/{_killsNeeded}");
+
+            if (_killCount < _killsNeeded)
+                return;
+            
+            MarkCompleted();
+            TriggerComponentCompleted(this);
+        }
+    }
+}</code></pre>
+									</li>
+                                </ul>
+								<p>We're almost there! I promise :D</p>
+								<h3>Starting Quests</h3>
+								<p>One thing that I left out was the ability to start a quest. This function really depends on what sort of quest system you are aiming for.
+								<br>The way I usually set up my quest and components is that once you have completed one component, the next enables (as seen in Quest.cs). Some games feature
+								quests where two components are enabled at the same time (such as kill and collect items). If you wish to create a quest like that,
+								simply enable the required components when you start the quest. In this example, starting a quest will simply enable the first component.</p>
+								<p>Starting by adding the following method to <span class="class">Quest.cs</span>.</p>
+								
+								<ul class="code-block">
+<pre class="cscode"><code>public void Activate()
+{
+    if (QuestComponents.Count < 1) return;
+
+    QuestComponents[0].EnableComponent();
+    QuestStatus = QuestStatus.Active;
+}</code></pre>
+
+								</ul>
+								<p>Next up, we need a way to control the quests in the game, keep track of completed ones and so on. This example will use a simple approach that initializes all
+								quests when the game is started. If you wish so, you can of course serialize data required and load quests through a save system instead.</p>
+								<p>Start by creating a class called <span class="class">QuestManager.cs</span>. In there, we can store all quests and add functionality for starting quests.
+								<br>In this example, I have let the QuestManager start the first quest in the list. This could be changed to instead use events on NPCs or such.</p>
+								
+								<ul class="code-block">
+                                    <li class="">
+									<h4>QuestManager.cs</h4>
+<pre class="cscode"><code>using System.Collections.Generic;
+using UnityEngine;
+
+namespace QuestSystem
+{
+    public class QuestManager : MonoBehaviour
+    {
+        [SerializeField] private List&lt;SO_Quest> questsToLoad = new List&lt;SO_Quest>();
+
+        public Dictionary&lt;int, Quest> Quests;
+
+        private void Awake()
+        {
+            InitializeQuests();
+        }
+
+        private void Start()
+        {
+            // For now, simply start the first quest :D
+            StartQuest(0);
+        }
+
+        public bool StartQuest(int id)
+        {
+            if (!Quests.ContainsKey(id)) return false;
+            if (Quests[id].QuestStatus != QuestStatus.Inactive) return false;
+            
+            Quests[id].Activate();
+            Quests[id].OnQuestCompleted += QuestCompleted;
+            
+            Debug.unityLogger.Log($"{Quests[id].QuestName} has been started");
+            return true;
+        }
+
+        private void QuestCompleted(Quest quest)
+        {
+            Debug.unityLogger.Log($"{quest.QuestName} has been completed");
+            quest.OnQuestCompleted -= QuestCompleted;
+            
+            QuestEvents.TriggerQuestCompleted(quest);
+        }
+
+        private void InitializeQuests()
+        {
+            if (questsToLoad.Count <= 0) return;
+            
+            Quests = new Dictionary&lt;int, Quest>();
+
+            for (var i = 0; i < questsToLoad.Count; i++)
+            {
+                SO_Quest questToLoad = questsToLoad[i];
+                Quest quest = new Quest(questToLoad.questName, questToLoad.id, questToLoad.components);
+                Quests.Add(quest.QuestID, quest);
+                
+                Debug.unityLogger.Log($"{quest.QuestName} has been initialized");
+            }
+        }
+    }
+}
+</code></pre>
+									</li>
+                                </ul>
+								
+								<p>As seen above, there is a new event inside of <span class="class">QuestEvents.cs</span> called OnQuestCompleted. This can be used
+								to reward the player with items, display UI, or even kill them if you're mean ;)</p>
+								
+								<ul class="code-block">
+<pre class="cscode"><code>public static event Action&lt;Quest> OnQuestCompleted;
+public static void TriggerQuestCompleted(Quest quest) { OnQuestCompleted?.Invoke(quest); }
+</code></pre>
+                                </ul>
+								<p>Finally, we can test our quests! I've thrown together a little script to trigger the enemy event when you click a cube in the scene.
+								<br>Make sure to create a new GameObject and add <span class="class">QuestManager.cs</span> to it. Afterwards, set up the list of quests to load and hit play.
+								<br>I have also included the example of clicking the enemy below if you wish to test it as well.</p>
+								
+								<ul class="code-block">
+                                    <li class="">
+									<h4>Enemy.cs</h4>
+<pre class="cscode"><code>using QuestSystem;
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    [SerializeField] private int enemyID;
+    
+    private void OnMouseDown()
+    {
+        QuestEvents.TriggerEnemyKilled(enemyID);
+        Destroy(gameObject);
+    }
+}
+</code></pre>
+									</li>
+                                </ul>
+								<p>Time to test the quest :D I threw 6 "rats" into the scene and hoped for the best!</p>
+								<!-- Image -->
+                                <div class="gallery" style="margin-top:15px;">
+                                    <a href="../assets/images/tutorial-questsystem/questTest1.png">
+                                        <img src="../assets/images/tutorial-questsystem/questTest1.png" class="w-100">
+                                    </a>
+									<a href="../assets/images/tutorial-questsystem/questTest2.png">
+                                        <img src="../assets/images/tutorial-questsystem/questTest2.png" class="w-100" style="margin-top:15px;">
+                                    </a>
+                                </div>
+								<p>Everything is working perfectly. If you were to change the ID of the enemy, it would not work (as intended).</p>
+								
+								<h3>BONUS - Item Collected</h3>
+								<p>I did mention that we had two component examples. Now that enemy killed is done. We can simply create a couple of classes and events to get literally anything else tracked by
+								our quest system. I am using the exact same approach for items at the moment.</p>
+								<p>The following code blocks should show items working. Warning: It is a copy-paste of the enemy</p>
+								
+								<ul class="code-block">
+                                    <li class="">
+									<h4>Item.cs</h4>
+<pre class="cscode"><code>using QuestSystem;
+using UnityEngine;
+
+public class Item : MonoBehaviour
+{
+    [SerializeField] private int itemID;
+    
+    private void OnMouseDown()
+    {
+        QuestEvents.TriggerItemCollected(itemID);
+        Destroy(gameObject);
+    }
+}
+
+</code></pre>
+									</li>
+                                </ul>
+								
+								<ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+									<h4>SO_QC_ItemCollected.cs</h4>
+<pre class="cscode"><code>using UnityEngine;
+
+namespace QuestSystem
+{
+    [CreateAssetMenu(fileName = "QC_ItemCollected", menuName = "QuestSystem/Components/QC_ItemCollected", order = 2)]
+    public class SO_QC_ItemCollected : SO_QuestComponent
+    {
+        [Header("Item Settings")]
+        public int itemID;
+        public int itemAmountNeeded;
+    }
+}
+
+</code></pre>
+									</li>
+                                </ul>
+								
+								<ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+									<h4>QuestEvents.cs</h4>
+<pre class="cscode"><code>public static event Action&lt;int> OnItemCollected;
+public static void TriggerItemCollected(int itemID) { OnItemCollected?.Invoke(itemID); }</code></pre>
+									</li>
+                                </ul>
+								
+								<ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+									<h4>Quest.cs</h4>
+<pre class="cscode"><code>private readonly Dictionary&lt;QuestComponent.QuestComponentType, System.Func&lt;SO_QuestComponent, QuestComponent&gt;&gt 
+		_componentFactory = new Dictionary&lt;QuestComponent.QuestComponentType, Func&lt;SO_QuestComponent, QuestComponent&gt;&gt;()
+{
+    { QuestComponent.QuestComponentType.EnemyKilled, QC_EnemyKilled.CreateFactory },
+    { QuestComponent.QuestComponentType.ItemCollected, QC_ItemCollected.CreateFactory }
+};</code></pre>
+									</li>
+                                </ul>
+								
+								<ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+									<h4>QC_ItemCollected.cs</h4>
+<pre class="cscode"><code>using UnityEngine;
+
+namespace QuestSystem
+{
+    public class QC_ItemCollected : QuestComponent
+    {
+        private int _itemID;
+        private int _itemCount;
+        private int _itemAmountNeeded;
+
+        public QC_ItemCollected(string name, string description, int itemID, int itemAmountNeeded) : base(name, description)
+        {
+            _itemID = itemID;
+            _itemAmountNeeded = itemAmountNeeded;
+            _itemCount = 0;
+            ComponentType = QuestComponentType.ItemCollected;
+        }
+        
+        public static QuestComponent CreateFactory(SO_QuestComponent so_questComponent)
+        {
+            SO_QC_ItemCollected localQuestComponent = (SO_QC_ItemCollected)so_questComponent;
+
+            return new QC_ItemCollected(
+                localQuestComponent.componentName,
+                localQuestComponent.description,
+                localQuestComponent.itemID,
+                localQuestComponent.itemAmountNeeded);
+        }
+        
+        public override void EnableComponent()
+        {
+            base.EnableComponent();
+            QuestEvents.OnItemCollected += ItemCollected;
+        }
+
+        public override void MarkCompleted()
+        {
+            base.MarkCompleted();
+            QuestEvents.OnItemCollected -= ItemCollected;
+        }
+
+        private void ItemCollected(int itemID)
+        {
+            if (_itemID != itemID)
+                return;
+
+            _itemCount++;
+            
+            Debug.unityLogger.Log($"{ComponentName}: Item Type {_itemID} was collected {_itemCount}/{_itemAmountNeeded}");
+
+            if (_itemCount < _itemAmountNeeded)
+                return;
+            
+            MarkCompleted();
+            TriggerComponentCompleted(this);
+        }
+    }
+}
+</code></pre>
+									</li>
+                                </ul>
+								<p>And that's it! I've modified the first quest to also include the new item collect component by adding it to the quest's list of components. See it working below!</p>
+								
+								<!-- Image -->
+                                <div class="gallery" style="margin-top:15px;">
+                                    <a href="../assets/images/tutorial-questsystem/questTest3.png">
+                                        <img src="../assets/images/tutorial-questsystem/questTest3.png" class="w-100">
+                                    </a>
+									<a href="../assets/images/tutorial-questsystem/questTest4.png">
+                                        <img src="../assets/images/tutorial-questsystem/questTest4.png" class="w-100" style="margin-top:15px;">
+                                    </a>
+                                </div>
+								<p>That is everything for this long tutorial! I hope you found it useful. Again, feel free to contact me by email or social media if you wish to
+								discuss this system further. I am debating creating a custom editor for this as well or simply expanding the system to include more useful scenarios.</p>
+								
+								<p>Thank you! Byee</p>
+                            </div>
+                        </div>        
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section-4 odd">
+            <div class="container">
+				<div class="row">
+					<div class="col-12 col-md-6 align-self-start text-center text-md-left">
+						<div class="row intro">
+							<div class="col-12 p-0">
+
+								<div class="step-title">
+									<h2 class="header-color">Contact</h2>
+									<p>Want to get in contact with me?</p>
+									<h5 class="odd">Email: <i class="alt">benjaminnilsson1997@gmail.com</i></h5>
+									<p>You can also contact me through <br>social media if preferred.</p>
+								</div>
+								
+								<ul class="navbar-nav share-list mt-0 ml-auto">
+									<li class="nav-item">
+										<a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
+									</li>
+									<li class="nav-item">
+										<a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
+									</li>
+									<li class="nav-item">
+										<a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
+									</li>
+									<li class="nav-item">
+										<a href="https://github.com/BenNilsson" class="nav-link" target="_blank"><i class="icon-social-github"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!-- #region Global ============================ -->
+
+        <!-- Modal [responsive menu] -->
+        <div id="menu" class="p-0 modal fade" role="dialog" aria-labelledby="menu" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-slideout" role="document">
+                <div class="modal-content full">
+                    <div class="modal-header" data-dismiss="modal">
+                        Menu <i class="icon-close"></i>
+                    </div>
+                    <div class="menu modal-body">
+                        <div class="row w-100">
+                            <div class="items p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                            <div class="contacts p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll [to top] -->
+        <div id="scroll-to-top" class="scroll-to-top">
+            <a href="#header" class="smooth-anchor">
+                <i class="icon-arrow-up"></i>
+            </a>
+        </div>        
+
+        <!-- ==============================================
+        Vendor Scripts
+        =============================================== -->
+        <script src="../assets/js/vendor/jquery.min.js"></script>
+        <script src="../assets/js/vendor/jquery.easing.min.js"></script>
+        <script src="../assets/js/vendor/jquery.inview.min.js"></script>
+        <script src="../assets/js/vendor/popper.min.js"></script>
+        <script src="../assets/js/vendor/bootstrap.min.js"></script>
+        <script src="../assets/js/vendor/ponyfill.min.js"></script>
+        <script src="../assets/js/vendor/slider.min.js"></script>
+        <script src="../assets/js/vendor/animation.min.js"></script>
+        <script src="../assets/js/vendor/progress-radial.min.js"></script>
+        <script src="../assets/js/vendor/bricklayer.min.js"></script>
+        <script src="../assets/js/vendor/gallery.min.js"></script>
+        <script src="../assets/js/vendor/shuffle.min.js"></script>
+        <script src="../assets/js/vendor/particles.min.js"></script>
+        <script src="../assets/js/main.js"></script>
+
+        <!-- #endregion Global ========================= -->
+
+    </body>
+</html>
