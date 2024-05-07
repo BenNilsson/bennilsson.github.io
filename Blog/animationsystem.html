@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- ==============================================
+    Basic Page Needs
+    =============================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+
+    <title>Ben Nilsson - Portfolio</title>
+
+    <meta name="description" content="Computer Games Developer. I am a Danish aspiring games developer based in the UK. Currently working on Sea of Thieves at Flix Interactive.">
+    <meta name="subject" content="Computer Games Developer. I am a Danish aspiring games developer based in the UK. Currently working on Sea of Thieves at Flix Interactive.">
+
+    <!-- ==============================================
+    Favicons
+    =============================================== -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/apple-touch-icon-114x114.png">
+
+    <!-- ==============================================
+    Vendor Stylesheet
+    =============================================== -->
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/slider.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/vendor/icons.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/animation.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/gallery.min.css">
+
+    <!-- ==============================================
+    Custom Stylesheet
+    =============================================== -->
+    <link rel="stylesheet" href="../assets/css/default.css">
+    <link rel="stylesheet" href="../assets/css/theme-light-blue.css">
+
+    <!-- =====================================
+    Custom Code Highlighting
+    ========================= -->
+    <link rel="stylesheet" href="../assets/highlight/styles/rider.dark.css">
+    <script src="../assets/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- ==============================================
+    Theme Settings
+    =============================================== -->
+    <style>
+        :root {
+            --header-bg-color: #2f2f2f;
+            --nav-item-color: #f5f5f5;
+            --top-nav-item-color: #f5f5f5;
+            --hero-bg-color: #181818;
+            --section-1-bg-color: #2f2f2f;
+            --section-2-bg-color: #181818;
+            --section-3-bg-color: #181818;
+            --section-4-bg-color: #181818;
+            --section-5-bg-color: #181818;
+            --section-6-bg-color: #181818;
+            --footer-bg-color: #2f2f2f;
+        }
+    </style>
+
+    <style>
+        .toc:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+    <body class="theme-mode-dark">
+
+        <!-- Header -->
+        <header id="header">
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand navbar-fixed">
+                <div class="container header">
+
+                    <!-- Navbar Brand-->
+                    <a class="navbar-brand" href="#">
+                        Ben Nilsson
+                        <!-- 
+                            Custom Logo
+                            <img src="assets/images/logo.svg" alt="Leverage">
+                        -->
+                    </a>
+
+                    <!-- Nav holder -->
+                    <div class="ml-auto"></div>
+
+                    <!-- Navbar Items -->
+                    <ul class="navbar-nav items">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../Portfolio/index.html" class="nav-link">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../Blog/index.html" class="nav-link">Blog</a>
+                        </li>
+						<li class="nav-item">
+                            <a href="../Contact/index.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Navbar Icons -->
+                    <ul class="navbar-nav icons">
+                        <li class="nav-item social">
+                            <a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
+                        </li>
+						<li class="nav-item social">
+                            <a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
+                        </li>
+                        <li class="nav-item social">
+                            <a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
+                        </li>
+                    </ul>
+
+                    <!-- Navbar Toggle -->
+                    <ul class="navbar-nav toggle">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#menu">
+                                <i class="icon-menu m-0"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+		
+		<!-- Content -->
+        <section id="content" class="section-1 body-mode-dark single">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Main -->
+                    <main class="col-12 p-0">
+                        <div class="row">
+                            <div class="col-12 align-self-center">
+                                <h2 class="mt-0 ml-0 header-color">Making a 2D animation system in C++</h2>
+
+                                <!-- Post Holder -->
+                                <ul class="mb-5 post-holder">
+                                    <li class="post-meta-item">
+                                        <time class="date"><span class="posted-on">Posted on <time class="entry-date published updated header-color">May 10, 2024</time></span></time>
+                                    </li>
+                                </ul>
+
+                                <p>I spent this week learning about animation in 2D as I wanted to create an advanced system for a custon engine in C++. This blog is going to cover requirements, research, and the implementation for the system.</p>
+
+                                <!-- Table of Contents -->
+                                <h2 class="mt-0 ml-0">Content</h2>
+                                <ol style="list-style-type: none;">
+                                    <li><a href="#1.0"><span class="toc">1.0 - The Goal</span></a></li>
+                                    <ol style="list-style-type: none; padding-inline-start: 2ch;">
+                                        <li><a href="#1.1"><span class="toc">1.1 - Requirements</span></a></li>
+                                    </ol>
+
+                                    <li><a href="#2.0"><span class="toc">2.0 - The Existing Solution</span></a></li>
+                                    <ol style="list-style-type: none; padding-inline-start: 2ch;">
+                                        <li><a href="#2.1"><span class="toc">2.1 - The Code</span></a></li>
+                                        <ol style="list-style-type: none; padding-inline-start: 2ch;">
+                                            <li><a href="#2.1.1"><span class="toc">2.1.1 - Animation.h</span></a></li>
+                                            <li><a href="#2.1.2"><span class="toc">2.1.2 - AnimationComponent.h</span></a></li>
+                                            <li><a href="#2.1.3"><span class="toc">2.1.3 - AnimationManager.h</span></a></li>
+                                            <li><a href="#2.1.4"><span class="toc">2.1.4 - AnimationManager.cpp</span></a></li>
+                                            <li><a href="#2.1.5"><span class="toc">2.1.5 - Code Explained</span></a></li>
+                                        </ol>
+                                        <li><a href="#2.2"><span class="toc">2.2 - Conclusion of Current System</span></a></li>
+                                    </ol>
+
+                                    <li><a href="#3.0"><span class="toc">3.0 - Researching Existing Implementations</span></a></li>
+                                    <ol style="list-style-type: none; padding-inline-start: 2ch;">
+                                        <!--<li><a href="#1.1"><span class="toc">1.1 - Requirements</span></a></li>-->
+                                    </ol>
+
+                                    <li><a href="#4.0"><span class="toc">4.0 - The New System</span></a></li>
+                                    <ol style="list-style-type: none; padding-inline-start: 2ch;">
+                                        <li><a href="#4.1"><span class="toc">4.1 - Hot-reloading Animations</span></a></li>
+                                        <ol style="list-style-type: none; padding-inline-start: 2ch;">
+                                            <li><a href="#4.1.1"><span class="toc">4.1.1 - Loading Animations from files</span></a></li>
+                                            <li><a href="#4.1.2"><span class="toc">4.1.2 - Reloading at Runtime</span></a></li>
+                                        </ol>
+                                        <li><a href="#4.2"><span class="toc">4.2 - Expanding Animations</span></a></li>
+                                    </ol>
+                                </ol>
+
+                                
+
+                                <!-- 1.0 -->
+                                <p></p>
+                                <h2 id="1.0" class="mt-0 ml-0">1.0 - The Goal</h2>
+                                <p>
+                                    Animation in 2D sounds fairly simple. You cycle through some sprites and that is it. However, when you want to expand your game, this simple solution can lead to some problems. For instance,
+                                    we have a 2D RPG game where you can equip different helmets, hats, chestplates, capes, or even swap hairstyles. How do you at runtime swap out the animation to support all of this whilst also maintaining
+                                    a decent workflow. The last thing you want to do is draw every sprite combination.
+                                </p>
+                                <p>
+                                    The goal is to have a system that can support different layouts for armor and accessories. I also want this system to introduce
+                                    events so I can trigger certain game parts during an animation. E.g. dealing damage when a sword swings and not during anticipation.
+                                    Finally, the I want to be able to hot-reload animations for quicker iteration. So to recap, here is a list of requirements:
+                                </p>
+
+                                <h3 id="1.1">1.1 - Requirements</h3>
+                                <ul>
+                                    <li>Create an animation system to play 2D animations on sprites.</li>
+                                    <li>Introduce layers so we can swap out individual parts of animations.</li>
+                                    <li>Sync up all layers so that the animation plays correctly when changed.</li>
+                                    <li>Events for gameplay hooks.</li>
+                                    <li>Make the animations able to be hot-reloaded.</li>
+                                    <li>Easily expandable for tools such as animation editors.</li>
+                                </ul>
+
+                                <!-- 2.0 -->
+                                <p></p>
+                                <h2 id="2.0" class="mt-0 ml-0">2.0 - The Existing Solution</h2>
+                                <p>
+                                    For this animation system, I will be using a 2D C++ engine that made by myself and <a href="https://deadmonstor.github.io/" target="_blank">Joshua Mobley</a>. Below is a video demonstrating
+                                    what we currently have to present in the game. This engine includes rendering, an event system, player movement, mod support, logging, simple UI, tilemaps, simple 2D animation, basic overlap checks, and a debug menu bar.
+                                    This engine is built using OpenGL, GLFW, and glm.
+                                </p>
+                                <video width="800" height="450" controls muted>
+                                    <source src="../assets/videos/blog-animation/EngineShowcase.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                <p></p>
+                                <h3 id="2.1" class="mt-0 ml-0">2.1 - The Code</h3>
+                                <p>
+                                    The above video showcases a player moving around a level and interacting with a chest. When walking,
+                                    the player uses a different animation. This works by swapping through different individual sprites when a frame time is hit.
+                                    Firstly, we define the animation as follows:
+                                </p>
+                                <p><i>Note: To keep everything simple and concise, includes won't be part of code blocks.</i></p>
+
+                                <!-- AnimationComponent.h -->
+                                <ul id="2.1.1" class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>2.1.1 - Animation.h</h4>
+<pre class="cppcode"><code>class Animation
+{
+public:
+    Animation(std::vector&lt;Texture2D*>& textures, const std::string& name, const float frameTime, const int cellWidth, const int cellHeight, const int frameCount, const bool loop)
+        : textures(textures)
+        , name(name)
+        , frameTime(frameTime)
+        , cellWidth(cellWidth)
+        , cellHeight(cellHeight)
+        , frameCount(frameCount)
+        , loop(loop)
+        {
+            numberOfTextures = textures.size();
+            index = 0;
+        }
+
+    std::vector&lt;Texture2D*> textures;
+    std::string name;
+    float frameTime;
+    int cellWidth;
+    int cellHeight;
+    int frameCount;
+    bool loop;
+
+private:
+    size_t numberOfTextures;
+    int index;
+};
+
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <!-- AnimationComponent.h -->
+                                <ul id="2.1.2" class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>2.1.2 - AnimationComponent.h</h4>
+<pre class="cppcode"><code>class AnimationComponent : public Component
+{
+public:
+    virtual void Start() override; // Calls a registered event that AnimationManager listens to
+    virtual void OnDestroy() override; // Calls an unregistered event that AnimationManager listens to
+
+public:
+    Animation* currentAnimation;
+    float currentFrameCount = 0;
+    int currentFrameIndex = 0;
+    bool playOnStart = true;
+    bool shouldPlay = false;
+};
+</code></pre>
+                                    </li>
+                                </ul>
+
+
+                                <!-- AnimationManager.h -->
+                                <ul id="2.1.3" class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>2.1.3 - AnimationManager.h</h4>
+<pre class="cppcode"><code>class AnimationManager
+{
+public:
+    static void Initialize();
+    static void Update();
+    static void Cleanup();
+
+    static void RegisterAnimation(const std::string& animationName, Animation* animation);
+    static void Play(std::shared_ptr&lt;GameObject> gameObject, const std::string& animationName);
+
+private:
+    static void OnAnimationComponentStarted(AnimationComponentStartedEvent* event);
+    static void OnAnimationComponentPendingDestroy(AnimationComponentPendingDestroyEvent* event);
+
+private:
+    inline static std::vector&lt;AnimationComponent*> animationComponents = std::vector&lt;AnimationComponent*>();
+    inline static std::map&lt;std::string, Animation*> animations = std::map&lt;std::string, Animation*>();
+
+    inline static uint32_t onAnimationComponentStartedIndex;
+    inline static uint32_t onAnimationComponentPendingDestroyIndex;
+};
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <!-- AnimationManager.cpp -->
+                                <ul id="2.1.4" class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>2.1.4 - AnimationManager.cpp</h4>
+<pre class="cppcode"><code>void AnimationManager::Initialize()
+{
+    onAnimationComponentStartedIndex = Events::Subscribe(&AnimationManager::OnAnimationComponentStarted);
+    onAnimationComponentPendingDestroyIndex = Events::Subscribe(&AnimationManager::OnAnimationComponentPendingDestroy);
+}
+
+void AnimationManager::Update()
+{
+    ZoneScoped; // ZoneScopes are used to profile functions using Tacey
+
+    if (SceneManager::IsSceneLoading())
+    {
+        return;
+    }
+
+    if (animationComponents.size() <= 0)
+    {
+        return;
+    }
+
+    for (int i = 0; i < animationComponents.size(); ++i)
+    {
+        AnimationComponent* animationComponent = animationComponents[i];
+        SpriteComponent* spriteComponent = animationComponent->GetOwner()->GetComponent&lt;SpriteComponent>();
+
+        if (animationComponent == nullptr || spriteComponent == nullptr)
+            continue;
+
+        if (!animationComponent->shouldPlay)
+            continue;
+
+        Animation* currentAnimation = animationComponent->currentAnimation;
+
+        if (currentAnimation == nullptr)
+            continue;
+
+        if (animationComponent->currentFrameIndex > currentAnimation->frameCount)
+        {
+            if (!currentAnimation->loop)
+                continue;
+        }
+
+        if (currentAnimation->textures.size() < 1)
+            continue;
+
+        animationComponent->currentFrameCount += (float)Time::GetDeltaTime() * 1000.0f;
+
+        // Go to next sprite or stop the animation
+        if (animationComponent->currentFrameCount > currentAnimation->frameTime)
+        {
+            // If not looping and we're not at the max index or if we're looping, increase the frame count.
+            if (!currentAnimation->loop && animationComponent->currentFrameIndex < currentAnimation->frameCount - 1
+            || currentAnimation->loop)
+            {
+                animationComponent->currentFrameIndex++;
+            }
+            
+            // If we are at the max frame count and looping, reset animation
+            if (animationComponent->currentFrameIndex >= currentAnimation->frameCount && currentAnimation->loop)
+            {
+                animationComponent->currentFrameIndex = 0;
+            }
+
+            // Reset frame count timer.
+            animationComponent->currentFrameCount = 0.0f;
+        }
+
+        if (currentAnimation->textures.size() <= animationComponent->currentFrameIndex)
+        {
+            continue;
+        }
+
+        // Set the texture to the right sprite.
+        Texture2D* texture = currentAnimation->textures[animationComponent->currentFrameIndex];
+        spriteComponent->SetTexture(texture);
+    }
+}
+
+void AnimationManager::RegisterAnimation(const std::string& animationName, Animation* animation)
+{
+    if (!animations.contains(animationName))
+    {
+        animations.insert(std::pair&lt;std::string, Animation*>(animationName, animation));
+    }
+    else
+    {
+        LOG_WARNING("Tried to register an animation with the name " + animationName + " but it already exists");
+    }
+}
+
+void AnimationManager::Cleanup()
+{
+    Events::UnSubscribe(&AnimationManager::OnAnimationComponentStarted, onAnimationComponentStartedIndex);
+    Events::UnSubscribe(&AnimationManager::OnAnimationComponentPendingDestroy, onAnimationComponentPendingDestroyIndex);
+
+    for (auto& [_, animation] : animations)
+    {
+        delete animation;
+    }
+
+    animations.clear();
+}
+
+void AnimationManager::Play(std::shared_ptr&lt;GameObject> gameObject, const std::string& animationName)
+{
+    if (!animations.contains(animationName))
+    {
+        LOG_ERROR("Tried to play an animation with the name " + animationName + " but it does not exist");
+        return;
+    }
+
+    AnimationComponent* animationComponent = gameObject->GetComponent&lt;AnimationComponent>();
+    SpriteComponent* spriteComponent = gameObject->GetComponent&lt;SpriteComponent>();
+
+    if (animationComponent == nullptr)
+    {
+        return;
+    }
+
+    if (animations.size() <= 0)
+    {
+        return;
+    }
+
+    if (animationComponent->currentAnimation != nullptr
+        && animationComponent->currentAnimation->name == animationName
+        && animationComponent->currentFrameIndex <= animationComponent->currentAnimation->frameCount - 1)
+    {
+        return;
+    }
+
+    animationComponent->currentAnimation = animations[animationName];
+    animationComponent->currentFrameCount = 0.0f;
+    animationComponent->currentFrameIndex = 0;
+    animationComponent->shouldPlay = true;
+}
+
+void AnimationManager::OnAnimationComponentStarted(AnimationComponentStartedEvent* event)
+{
+    animationComponents.push_back(event->animationComponent);
+}
+
+void AnimationManager::OnAnimationComponentPendingDestroy(AnimationComponentPendingDestroyEvent* event)
+{
+    auto componentToRemoveRange = std::ranges::remove(animationComponents, event->animationComponent);
+    animationComponents.erase(componentToRemoveRange.begin(), componentToRemoveRange.end());
+}
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <p></p>
+                                <h4 id="2.1.5" class="mt-0 ml-0">2.1.5 - Code Explained</h4>
+                                I commented the code for the sake of readability here. The idea is simple, we define an animation, register it to the
+                                AnimationManager, and then play it using the AnimationComponent. Components are attached to GameObjects, similar to what
+                                you may have seen in other engines.
+
+                                <p>
+                                    The AnimationComponent keeps track of its own time played using currentFrameCount and the sprite using currentFrameIndex.
+                                    AnimationManager's update function will then look over all of the components and increase the currentFrameCount. If the currentFrameCount is greater
+                                    than the animation's frameCount, we increment currentFrameIndex.
+                                </p>
+
+                                <!-- 2.2 -->
+                                <p></p>
+                                <h3 id="2.2" class="mt-0 ml-0">2.2 - Conclusion of Current System</h3>
+                                <p>
+                                    When playing, the animation manager will loop over all AnimationComponents and update the component to display the
+                                    correct sprites. This means that at the moment, we have no concept of layers, sockets, or anything. All we have is the idea
+                                    of going through a set of sprites. The code is also not very optimised but that will not be a focus on this blog.
+                                </p>
+                                <p>
+                                    The above does not meet our requirements so as stated before, the goal for this week is to implement a more robust system
+                                    that features what we need.
+                                </p>
+
+                                <!-- 3.0 -->
+                                <p></p>
+                                <h2 id="3.0" class="mt-0 ml-0">3.0 - Researching Existing Implementations</h2>
+                                <p></p>
+
+                                <!-- 4.0 -->
+                                <p></p>
+                                <h2 id="4.0" class="mt-0 ml-0">4.0 - The New System</h2>
+                                <p></p>
+
+                                <!-- 4.1 -->
+                                <h3 id="4.1" class="mt-0 ml-0">4.1 - Hot-reloading Animations</h3>
+                                The first thing I want to get done is hot-reloading animations. This will allow me to iterate over setups faster.
+
+                                <!-- 4.1.1 -->
+                                <h4 id="4.1.1">4.1.1 - Loading Animations from files</h4>
+                                <p>
+                                    To set up animations, we first need to convert every Animation into a file so that we can detect when it has changed.
+                                    Currently, an animation is defined in code with the following setup:
+                                </p>
+
+                                <!-- Animation Example -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>Animation Example</h4>
+<pre class="cppcode"><code>// Idle Animation
+std::vector&lt;Texture2D*> characterTextures;
+characterTextures.push_back(ResourceManager::GetTexture("Player_Idle_1"));
+characterTextures.push_back(ResourceManager::GetTexture("Player_Idle_2"));
+characterTextures.push_back(ResourceManager::GetTexture("Player_Idle_3"));
+characterTextures.push_back(ResourceManager::GetTexture("Player_Idle_4"));
+Animation* idleAnimation = new Animation(characterTextures, "PlayerIdle", 200.0f, 16, 16, 4, true);
+AnimationManager::RegisterAnimation(idleAnimation->name, idleAnimation);
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <p>
+                                    This gets very annoying when a lot of animations are implemented. For our system, we want to have many animations per set of armor. Using files, we can
+                                    make this easier to iterate on. We can also use an editor to make it even easier to modify animations later. For now, we will manually create a JSON file and load it.
+                                    This engine supports RapidJSON so loading a file shouldn't be hard.
+                                </p>
+                                <p></p>
+
+                                <p>
+                                    The first thing we do is to make a file new folder called Animations. This file will contain a JSON configuration. From there, we can iterate over the directory and grab anything with .anim extension.
+                                    For now, we will add a "name" field and load that. This will then log when registered.
+                                </p>
+
+                                <p>
+                                    I modified the AnimationManager to include a new function inside of Initialize called "LoadAnimations".
+                                    This function will iterate over a folder and check for any .anim file.
+                                </p>
+
+                                <!-- AnimationManager Update -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>AnimationManager::LoadAnimations()</h4>
+<pre class="cppcode"><code>void AnimationManager::LoadAnimations()
+{
+    std::string directory = ANIMATION_DIRECTORY; // defined in the .h file as a const string.
+
+    for (const auto& entry : std::filesystem::recursive_directory_iterator(directory))
+    {
+        if (entry.path().extension() == ANIMATION_EXTENSION) // defined in the .h file as a const string.
+        {
+            std::string filepath = entry.path().string();
+            std::string directory = filepath.substr(0, filepath.find_last_of("\\/"));
+
+            rapidjson::Document document;
+            std::ifstream file(filepath);
+            std::string json((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+            document.Parse(json.c_str());
+
+            if (document.HasParseError())
+            {
+                LOG_ERROR("Animation file is not valid JSON");
+                continue;
+            }
+
+            if (!document.HasMember("name"))
+            {
+                LOG_ERROR("Animation file does not have a name");
+                continue;
+            }
+
+            Animation* anim = new Animation();
+            anim->filePath = entry.path().string().c_str();
+
+            if (document["name"].IsString())
+            {
+                anim->name = document["name"].GetString();
+            }
+
+            // Load everything else we care for here...
+
+            // Finally, register the animation
+            RegisterAnimation(anim->name, anim);
+        }
+    }
+}
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <p>For this, we use the following file:</p>
+                                <ul class="code-block">
+                                    <li class="">
+                                        <h4>AnimationTest.anim</h4>
+<pre class="cppcode"><code>{
+    "name": "test"
+}
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <p>We get the following output: </p>
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        15:03.59 [Info] [AnimationManager.cpp | Function: RegisterAnimation | Line: 89] Registered anination with the name test
+                                    </li>
+                                </ul>
+
+                                <p>Finally, we can add the other parameters defined in our Animation class. I won't show the code for this as it is a copy/paste of the Json parsing above.</p>
+                                <p>After adding all of the aditional information, this is the file we end up with. We can now delete all of the code above that registered this animation.</p>
+                                <ul class="code-block">
+                                    <li class="">
+                                        <h4>PlayerIdle.anim</h4>
+<pre class="jsoncode"><code>{
+    "name": "PlayerIdle",
+    "textures": [
+        "Player_Idle_1",
+        "Player_Idle_2",
+        "Player_Idle_3",
+        "Player_Idle_4"
+    ],
+    "frameTime": 200.0,
+    "cellWidth": 16,
+    "cellHeight": 16,
+    "frameCount": 4,
+    "loop": true
+}
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <!-- 4.1.1 -->
+                                <h4 id="4.1.2">4.1.2 - Reloading at Runtime</h4>
+                                <p>
+                                    Now that we have animations loaded as files, we can hot-reload them by checking if the file has changed.
+                                    To do this, we use a library called <a href="https://github.com/ThomasMonkman/filewatch" target="_blank">FileWatch</a>.
+                                    When the file has changed, we simply re-load the file and apply the new changes.
+                                    Below is the addition to AnimationManager's initialize function:
+                                </p>
+
+                                <!-- AnimationManager Update -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>AnimationManager::Initialize()</h4>
+<pre class="cppcode"><code>fileWatcher = new filewatch::FileWatch<std::string>(
+    "Animations",
+    [](const std::string& path, const filewatch::Event)
+    {
+        if (!path.ends_with(ANIMATION_EXTENSION))
+        {
+            return;
+        }
+
+        std::filesystem::path localPath = std::string("Animations/" + path);
+        bool loadedAnimation = false;
+
+        for (auto& iter : animations)
+        {
+            Animation* anim = iter.second;
+
+            if (equivalent(anim->filePath, localPath))
+            {
+                loadedAnimation = true;
+                anim->needsRecompile = true;
+                break;
+            }
+        }
+
+        if (!loadedAnimation)
+        {
+            LOG_ERROR_F("ERROR::ANIMATION: Animation not found in AnimationManager | {}", localPath.string());
+        }
+    }
+);
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <p>
+                                    There are two changes to notice here. Firstly, we added 2 new variables to the animation class: bool needsRecompile, and std::filesystem::path filePath.
+                                    We set the needsRecompile flag to true if the file at the path is no longer identical to the one we look over. This flag is then
+                                    picked up in AnimationManager::Update where we loop over all animations and reload a file if the flag is set. Below is a video
+                                    showcasing the ability to hot-reload different parts of an animation:
+                                </p>
+
+                                <video width="800" height="450" controls muted>
+                                    <source src="../assets/videos/blog-animation/HotreloadShowcase.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                <!-- 4.2 -->
+                                <h4 id="4.2">4.2 - Expanding Animations</h4>
+
+                            </div>
+                        </div>        
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section-4 odd">
+            <div class="container">
+				<div class="row">
+					<div class="col-12 col-md-6 align-self-start text-center text-md-left">
+						<div class="row intro">
+							<div class="col-12 p-0">
+
+								<div class="step-title">
+									<h2 class="header-color">Contact</h2>
+									<p>Want to get in contact with me?</p>
+									<h5 class="odd">Email: <i class="alt">benjaminnilsson1997@gmail.com</i></h5>
+									<p>You can also contact me through <br>social media if preferred.</p>
+								</div>
+								
+								<ul class="navbar-nav share-list mt-0 ml-auto">
+									<li class="nav-item">
+										<a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
+									</li>
+									<li class="nav-item">
+										<a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
+									</li>
+									<li class="nav-item">
+										<a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
+									</li>
+									<li class="nav-item">
+										<a href="https://github.com/BenNilsson" class="nav-link" target="_blank"><i class="icon-social-github"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!-- #region Global ============================ -->
+
+        <!-- Modal [responsive menu] -->
+        <div id="menu" class="p-0 modal fade" role="dialog" aria-labelledby="menu" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-slideout" role="document">
+                <div class="modal-content full">
+                    <div class="modal-header" data-dismiss="modal">
+                        Menu <i class="icon-close"></i>
+                    </div>
+                    <div class="menu modal-body">
+                        <div class="row w-100">
+                            <div class="items p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                            <div class="contacts p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll [to top] -->
+        <div id="scroll-to-top" class="scroll-to-top">
+            <a href="#header" class="smooth-anchor">
+                <i class="icon-arrow-up"></i>
+            </a>
+        </div>        
+
+        <!-- ==============================================
+        Vendor Scripts
+        =============================================== -->
+        <script src="../assets/js/vendor/jquery.min.js"></script>
+        <script src="../assets/js/vendor/jquery.easing.min.js"></script>
+        <script src="../assets/js/vendor/jquery.inview.min.js"></script>
+        <script src="../assets/js/vendor/popper.min.js"></script>
+        <script src="../assets/js/vendor/bootstrap.min.js"></script>
+        <script src="../assets/js/vendor/ponyfill.min.js"></script>
+        <script src="../assets/js/vendor/slider.min.js"></script>
+        <script src="../assets/js/vendor/animation.min.js"></script>
+        <script src="../assets/js/vendor/progress-radial.min.js"></script>
+        <script src="../assets/js/vendor/bricklayer.min.js"></script>
+        <script src="../assets/js/vendor/gallery.min.js"></script>
+        <script src="../assets/js/vendor/shuffle.min.js"></script>
+        <script src="../assets/js/vendor/particles.min.js"></script>
+        <script src="../assets/js/main.js"></script>
+
+        <!-- #endregion Global ========================= -->
+
+    </body>
+</html>
