@@ -72,6 +72,10 @@
         .toc:hover {
             text-decoration: underline;
         }
+
+        .scroll-area {
+            scroll-margin-top: 150px;
+        }
     </style>
 
 </head>
@@ -108,7 +112,7 @@
                         <li class="nav-item">
                             <a href="../Blog/index.html" class="nav-link">Blog</a>
                         </li>
-						<li class="nav-item">
+                        <li class="nav-item">
                             <a href="../Contact/index.html" class="nav-link">Contact</a>
                         </li>
                     </ul>
@@ -118,7 +122,7 @@
                         <li class="nav-item social">
                             <a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
                         </li>
-						<li class="nav-item social">
+                        <li class="nav-item social">
                             <a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
                         </li>
                         <li class="nav-item social">
@@ -138,8 +142,8 @@
             </nav>
 
         </header>
-		
-		<!-- Content -->
+        
+        <!-- Content -->
         <section id="content" class="section-1 body-mode-dark single">
             <div class="container">
                 <div class="row">
@@ -180,9 +184,10 @@
                                         <li><a href="#2.2"><span class="toc">2.2 - Conclusion of Current System</span></a></li>
                                     </ol>
 
-                                    <li><a href="#3.0"><span class="toc">3.0 - Researching Existing Implementations</span></a></li>
+                                    <li><a href="#3.0"><span class="toc">3.0 - Looking at Existing Titles</span></a></li>
                                     <ol style="list-style-type: none; padding-inline-start: 2ch;">
-                                        <!--<li><a href="#1.1"><span class="toc">1.1 - Requirements</span></a></li>-->
+                                        <li><a href="#3.1"><span class="toc">3.1 - Terraria</span></a></li>
+                                        <li><a href="#3.2"><span class="toc">3.2 - Core Keeper</span></a></li>
                                     </ol>
 
                                     <li><a href="#4.0"><span class="toc">4.0 - The New System</span></a></li>
@@ -192,15 +197,34 @@
                                             <li><a href="#4.1.1"><span class="toc">4.1.1 - Loading Animations from files</span></a></li>
                                             <li><a href="#4.1.2"><span class="toc">4.1.2 - Reloading at Runtime</span></a></li>
                                         </ol>
-                                        <li><a href="#4.2"><span class="toc">4.2 - Expanding Animations</span></a></li>
+                                        <li><a href="#4.2"><span class="toc">4.2 - Designing The System</span></a></li>
+                                        <ol style="list-style-type: none; padding-inline-start: 2ch;">
+                                            <li><a href="#4.2.1"><span class="toc">4.2.1 - Quick Game Additions</span></a></li>
+                                            <li><a href="#4.2.2"><span class="toc">4.2.2 - Designing Layers</span></a></li>
+                                            <li><a href="#4.2.3"><span class="toc">4.2.3 - Designing Events</span></a></li>
+                                        </ol>
+                                        <li><a href="#4.3"><span class="toc">4.3 - Implementing The New System</span></a></li>
+                                        <ol style="list-style-type: none; padding-inline-start: 2ch;">
+                                            <li><a href="#4.3.1"><span class="toc">4.3.1 - Adding Additional Layers</span></a></li>
+                                            <li><a href="#4.3.2"><span class="toc">4.3.2 - Setting Active Layers and Objects</span></a></li>
+                                            <li><a href="#4.3.3"><span class="toc">4.3.3 - Rendering Layers</span></a></li>
+                                            <li><a href="#4.3.4"><span class="toc">4.3.4 - Setting up Animation Events</span></a></li>
+                                            <li><a href="#4.3.5"><span class="toc">4.3.5 - Registering to Events</span></a></li>
+                                            <li><a href="#4.3.6"><span class="toc">4.3.6 - Triggering Event Callbacks</span></a></li>
+                                        </ol>
                                     </ol>
-                                </ol>
 
-                                
+                                    <li><a href="#5.0"><span class="toc">5.0 - Conclusion and Showcase</span></a></li>
+                                    <ol style="list-style-type: none; padding-inline-start: 2ch;">
+                                        <li><a href="#5.1"><span class="toc">5.1 - Showcase</span></a></li>
+                                        <li><a href="#5.2"><span class="toc">5.2 - Conclusion</span></a></li>
+                                    </ol>
+
+                                </ol>
 
                                 <!-- 1.0 -->
                                 <p></p>
-                                <h2 id="1.0" class="mt-0 ml-0">1.0 - The Goal</h2>
+                                <h2 id="1.0" class="mt-0 ml-0 scroll-area">1.0 - The Goal</h2>
                                 <p>
                                     Animation in 2D sounds fairly simple. You cycle through some sprites and that is it. However, when you want to expand your game, this simple solution can lead to some problems. For instance,
                                     we have a 2D RPG game where you can equip different helmets, hats, chestplates, capes, or even swap hairstyles. How do you at runtime swap out the animation to support all of this whilst also maintaining
@@ -212,7 +236,7 @@
                                     Finally, the I want to be able to hot-reload animations for quicker iteration. So to recap, here is a list of requirements:
                                 </p>
 
-                                <h3 id="1.1">1.1 - Requirements</h3>
+                                <h3 id="1.1" class="scroll-area">1.1 - Requirements</h3>
                                 <ul>
                                     <li>Create an animation system to play 2D animations on sprites.</li>
                                     <li>Introduce layers so we can swap out individual parts of animations.</li>
@@ -224,19 +248,19 @@
 
                                 <!-- 2.0 -->
                                 <p></p>
-                                <h2 id="2.0" class="mt-0 ml-0">2.0 - The Existing Solution</h2>
+                                <h2 id="2.0" class="mt-0 ml-0 scroll-area">2.0 - The Existing Solution</h2>
                                 <p>
-                                    For this animation system, I will be using a 2D C++ engine that made by myself and <a href="https://deadmonstor.github.io/" target="_blank">Joshua Mobley</a>. Below is a video demonstrating
-                                    what we currently have to present in the game. This engine includes rendering, an event system, player movement, mod support, logging, simple UI, tilemaps, simple 2D animation, basic overlap checks, and a debug menu bar.
+                                    For this animation system, I will be using a 2D C++ engine made by myself and <a href="https://deadmonstor.github.io/" target="_blank">Joshua Mobley</a>. Below is a video demonstrating
+                                    what the engine currently features. This engine includes rendering, an event system, player movement, mod support, logging, simple UI, tilemaps, simple 2D animation, basic overlap checks, and a debug menu bar.
                                     This engine is built using OpenGL, GLFW, and glm.
                                 </p>
-                                <video width="800" height="450" controls muted>
+                                <video width="800" height="450" controls muted autoplay loop>
                                     <source src="../assets/videos/blog-animation/EngineShowcase.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
 
                                 <p></p>
-                                <h3 id="2.1" class="mt-0 ml-0">2.1 - The Code</h3>
+                                <h3 id="2.1" class="mt-0 ml-0 scroll-area">2.1 - The Code</h3>
                                 <p>
                                     The above video showcases a player moving around a level and interacting with a chest. When walking,
                                     the player uses a different animation. This works by swapping through different individual sprites when a frame time is hit.
@@ -245,7 +269,7 @@
                                 <p><i>Note: To keep everything simple and concise, includes won't be part of code blocks.</i></p>
 
                                 <!-- AnimationComponent.h -->
-                                <ul id="2.1.1" class="code-block" style="margin-top: 15px;">
+                                <ul id="2.1.1" class="code-block scroll-area" style="margin-top: 15px;">
                                     <li class="">
                                         <h4>2.1.1 - Animation.h</h4>
 <pre class="cppcode"><code>class Animation
@@ -282,7 +306,7 @@ private:
                                 </ul>
 
                                 <!-- AnimationComponent.h -->
-                                <ul id="2.1.2" class="code-block" style="margin-top: 15px;">
+                                <ul id="2.1.2" class="code-block scroll-area" style="margin-top: 15px;">
                                     <li class="">
                                         <h4>2.1.2 - AnimationComponent.h</h4>
 <pre class="cppcode"><code>class AnimationComponent : public Component
@@ -293,7 +317,7 @@ public:
 
 public:
     Animation* currentAnimation;
-    float currentFrameCount = 0;
+    float currentFrameTime = 0;
     int currentFrameIndex = 0;
     bool playOnStart = true;
     bool shouldPlay = false;
@@ -304,7 +328,7 @@ public:
 
 
                                 <!-- AnimationManager.h -->
-                                <ul id="2.1.3" class="code-block" style="margin-top: 15px;">
+                                <ul id="2.1.3" class="code-block scroll-area" style="margin-top: 15px;">
                                     <li class="">
                                         <h4>2.1.3 - AnimationManager.h</h4>
 <pre class="cppcode"><code>class AnimationManager
@@ -333,7 +357,7 @@ private:
                                 </ul>
 
                                 <!-- AnimationManager.cpp -->
-                                <ul id="2.1.4" class="code-block" style="margin-top: 15px;">
+                                <ul id="2.1.4" class="code-block scroll-area" style="margin-top: 15px;">
                                     <li class="">
                                         <h4>2.1.4 - AnimationManager.cpp</h4>
 <pre class="cppcode"><code>void AnimationManager::Initialize()
@@ -381,10 +405,10 @@ void AnimationManager::Update()
         if (currentAnimation->textures.size() < 1)
             continue;
 
-        animationComponent->currentFrameCount += (float)Time::GetDeltaTime() * 1000.0f;
+        animationComponent->currentFrameTime += (float)Time::GetDeltaTime() * 1000.0f;
 
         // Go to next sprite or stop the animation
-        if (animationComponent->currentFrameCount > currentAnimation->frameTime)
+        if (animationComponent->currentFrameTime > currentAnimation->frameTime)
         {
             // If not looping and we're not at the max index or if we're looping, increase the frame count.
             if (!currentAnimation->loop && animationComponent->currentFrameIndex < currentAnimation->frameCount - 1
@@ -400,7 +424,7 @@ void AnimationManager::Update()
             }
 
             // Reset frame count timer.
-            animationComponent->currentFrameCount = 0.0f;
+            animationComponent->currentFrameTime = 0.0f;
         }
 
         if (currentAnimation->textures.size() <= animationComponent->currentFrameIndex)
@@ -468,7 +492,7 @@ void AnimationManager::Play(std::shared_ptr&lt;GameObject> gameObject, const std
     }
 
     animationComponent->currentAnimation = animations[animationName];
-    animationComponent->currentFrameCount = 0.0f;
+    animationComponent->currentFrameTime = 0.0f;
     animationComponent->currentFrameIndex = 0;
     animationComponent->shouldPlay = true;
 }
@@ -488,20 +512,20 @@ void AnimationManager::OnAnimationComponentPendingDestroy(AnimationComponentPend
                                 </ul>
 
                                 <p></p>
-                                <h4 id="2.1.5" class="mt-0 ml-0">2.1.5 - Code Explained</h4>
+                                <h4 id="2.1.5" class="mt-0 ml-0 scroll-area">2.1.5 - Code Explained</h4>
                                 I commented the code for the sake of readability here. The idea is simple, we define an animation, register it to the
                                 AnimationManager, and then play it using the AnimationComponent. Components are attached to GameObjects, similar to what
                                 you may have seen in other engines.
 
                                 <p>
-                                    The AnimationComponent keeps track of its own time played using currentFrameCount and the sprite using currentFrameIndex.
-                                    AnimationManager's update function will then look over all of the components and increase the currentFrameCount. If the currentFrameCount is greater
+                                    The AnimationComponent keeps track of its own time played using currentFrameTime and the sprite using currentFrameIndex.
+                                    AnimationManager's update function will then look over all of the components and increase the currentFrameTime. If the currentFrameTime is greater
                                     than the animation's frameCount, we increment currentFrameIndex.
                                 </p>
 
                                 <!-- 2.2 -->
                                 <p></p>
-                                <h3 id="2.2" class="mt-0 ml-0">2.2 - Conclusion of Current System</h3>
+                                <h3 id="2.2" class="mt-0 ml-0 scroll-area">2.2 - Conclusion of Current System</h3>
                                 <p>
                                     When playing, the animation manager will loop over all AnimationComponents and update the component to display the
                                     correct sprites. This means that at the moment, we have no concept of layers, sockets, or anything. All we have is the idea
@@ -514,20 +538,54 @@ void AnimationManager::OnAnimationComponentPendingDestroy(AnimationComponentPend
 
                                 <!-- 3.0 -->
                                 <p></p>
-                                <h2 id="3.0" class="mt-0 ml-0">3.0 - Researching Existing Implementations</h2>
+                                <h2 id="3.0" class="mt-0 ml-0 scroll-area">3.0 - Looking at Existing Titles</h2>
+                                <p></p>
+
+                                <!-- 3.1 -->
+                                <p></p>
+                                <h3 id="3.1" class="mt-0 ml-0 scroll-area">3.1 - Terraria</h3>
+                                <p>
+                                    Terraria is a side-scrolling well-known 2D sandbox game. I wanted to look at how the animations look like to get an understanding of how hair styles and armor was done in the game.
+                                    For this game as well as the others, I will not look for any decompiled source code a I wanted to challenge myself when designig my own system.
+                                </p>
+
+                                <p>
+                                    When it comes to animation, Terraria has unique animations for walking, hitting, jumping, and so on. Each piece of armor layers on top of the existing animation.
+                                    Their weapons are simply attached to the arm when hitting or firing ranged weapons. They do not use individually animated attacks. E.g. the sword isn't animated.
+                                    This fits their style really well. Everything else seems to be a unique animation. Armor sprites are animated to follow existing animations. The game also has the ability
+                                    for layers to toggle off other layers. For instance, equipping a helmet hides the player's hair.
+                                </p>
+
+                                <video width="800" height="450" controls muted autoplay loop>
+                                    <source src="../assets/videos/blog-animation/Terraria.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                <!-- 3.2 -->
+                                <p></p>
+                                <h3 id="3.2" class="mt-0 ml-0 scroll-area">3.2 - Core Keeper</h3>
+                                <p>
+                                    Core Keeper follows a similar approach to terraria. However, instead of the weapon being attached to the rotating arm, the weapons are individually animated, resulting in a more
+                                    coherent animation. This means that every weapon is probably existing on its own layer with its own animations.
+                                </p>
+                                <p></p>
+                                <video width="800" height="450" controls muted autoplay loop>
+                                    <source src="../assets/videos/blog-animation/CoreKeeper.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                                 <p></p>
 
                                 <!-- 4.0 -->
                                 <p></p>
-                                <h2 id="4.0" class="mt-0 ml-0">4.0 - The New System</h2>
+                                <h2 id="4.0" class="mt-0 ml-0 scroll-area">4.0 - The New System</h2>
                                 <p></p>
 
                                 <!-- 4.1 -->
-                                <h3 id="4.1" class="mt-0 ml-0">4.1 - Hot-reloading Animations</h3>
+                                <h3 id="4.1" class="mt-0 ml-0 scroll-area">4.1 - Hot-reloading Animations</h3>
                                 The first thing I want to get done is hot-reloading animations. This will allow me to iterate over setups faster.
 
                                 <!-- 4.1.1 -->
-                                <h4 id="4.1.1">4.1.1 - Loading Animations from files</h4>
+                                <h4 id="4.1.1" class="scroll-area">4.1.1 - Loading Animations from files</h4>
                                 <p>
                                     To set up animations, we first need to convert every Animation into a file so that we can detect when it has changed.
                                     Currently, an animation is defined in code with the following setup:
@@ -583,7 +641,7 @@ AnimationManager::RegisterAnimation(idleAnimation->name, idleAnimation);
 
             rapidjson::Document document;
             std::ifstream file(filepath);
-            std::string json((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+            std::string json((std::istreambuf_iterator&lt;char>(file)), std::istreambuf_iterator&lt;char>());
             document.Parse(json.c_str());
 
             if (document.HasParseError())
@@ -658,8 +716,8 @@ AnimationManager::RegisterAnimation(idleAnimation->name, idleAnimation);
                                     </li>
                                 </ul>
 
-                                <!-- 4.1.1 -->
-                                <h4 id="4.1.2">4.1.2 - Reloading at Runtime</h4>
+                                <!-- 4.1.2 -->
+                                <h4 id="4.1.2" class="scroll-area">4.1.2 - Reloading at Runtime</h4>
                                 <p>
                                     Now that we have animations loaded as files, we can hot-reload them by checking if the file has changed.
                                     To do this, we use a library called <a href="https://github.com/ThomasMonkman/filewatch" target="_blank">FileWatch</a>.
@@ -712,14 +770,975 @@ AnimationManager::RegisterAnimation(idleAnimation->name, idleAnimation);
                                     showcasing the ability to hot-reload different parts of an animation:
                                 </p>
 
-                                <video width="800" height="450" controls muted>
+                                <video width="800" height="450" controls muted autoplay loop>
                                     <source src="../assets/videos/blog-animation/HotreloadShowcase.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
 
                                 <!-- 4.2 -->
-                                <h4 id="4.2">4.2 - Expanding Animations</h4>
+                                <h3 id="4.2" class="scroll-area">4.2 - Designing The System</h3>
+                                <p>
+                                    When looking at the examples above, we know that we have to make a choice. What style of animation do we want to go for?
+                                    This really comes down to preference and for this engine, I have decided to go for the more involved approach of animating every frame of every
+                                    animation for all layers. The goal is to go for more unique animations which full control will provide us with.
+                                </p>
 
+                                <!-- 4.2.1 -->
+                                <h4 id="4.2.1" class="scroll-area">4.2.1 - Quick Game Additions</h4>
+                                <p>
+                                    Before designing how I want layers to work, I wanted to a quick game change. The first thing I did was separate the player's hair from its body so we can
+                                    have different hair styles. I also exported the hair for every frame in our idle and run animation. Currently, the hair is not used
+                                    in the game and the player will by default be bald.
+                                </p>
+                                <!-- Image -->
+                                <div class="gallery" style="margin-top:15px;">
+                                    <a href="../assets/images/Blog-AnimationSystem/PlayerHairless.gif">
+                                        <img src="../assets/images/Blog-AnimationSystem/PlayerHairless.gif" style="width:25%;">
+                                    </a>
+                                </div>
+                                <p></p>
+
+                                <!-- 4.2.2 -->
+                                <h4 id="4.2.2" class="scroll-area">4.2.2 - Designing Layers</h4>
+                                <p>
+                                    When looking at existing titles, it is clear that layers are needed. Layers work in the sense that each piece of equipment (or each layer)
+                                    copies the currently playing animation. For this engine, I want to make sure that the AnimationComponent also dictates the remaining layers.
+                                    This is to ensure that no de-sync happens between multiple components playing individual animations. For example, we equip a helmet halfway through an existing
+                                    animation and now we have to sync up two components. Instead, we use one component, and draw everything using the component's data. Layers
+                                    should also be optional since some parts of the game might not use it. If we have a boss fight, the chances of the boss needing to equip different armor is very low.
+                                    So how are we going to achieve this? Let's take a look:
+                                </p>
+
+                                <p>
+                                    The SpriteComponent dictates which sprite we want to draw. As we know, the AnimationComponent then manipulates this as sets the needed texture for the animation.
+                                    Overall, this part works very well and will remain the same. Layers should be optional so we do not want to make any changes to the definition of the animation.
+                                    If a layer is added, it should follow the currently playing animation, almost like another animation underneath. However, we do not want another AnimationComponent due to the possibility of de-syncing like I mentioned
+                                    above. Instead, we will draw the sprites directly on top of the owner based on the current frame index of the animation. The engine I use has a concept of custom drawing, which
+                                    is the idea of adding anything to spritebatches before the rendering process starts. If you wanted to do this yourself, you could simply call the new draw call after the main render of the owner.
+                                </p>
+
+                                <p>
+                                    We want to include layers within an animation so that we know which sprite to grab. The active layers should then live on the AnimationComponent along with any object (e.g. hair style 1).
+                                    The AnimationManager will then find all layers if they exist, grab the texture it needs from the current animation frame index, and then submit the custom draw information.
+                                </p>
+
+                                <!-- Image -->
+                                <div class="gallery" style="margin-top:15px;">
+                                    <a href="../assets/images/Blog-AnimationSystem/LayersDesign.png">
+                                        <img src="../assets/images/Blog-AnimationSystem/LayersDesign.png" style="width:45%;">
+                                    </a>
+                                </div>
+                                <p></p>
+
+                                <p>
+                                    The illustration above showcases how I want layers to work. For simplicity, the other aspects of the animation are not there. Because the engine loads in everything into memory,
+                                    I am not concerned about this much data existing per animation. If we wanted to optimise this, we would introduce the idea of async loading different parts when needed. For now, that won't be something I will look into.
+                                </p>
+
+                                <p>
+                                    Now that we have a concept of how animation layers will work, I then started working on the actual iomplementation.
+                                </p>
+
+                                <!-- 4.2.3 -->
+                                <h4 id="4.2.3" class="scroll-area">4.2.3 - Designing Events</h4>
+                                <p>
+                                    Events are essential for ensuring gameplay element trigger at the correct time. The idea is that we insert a callback we want to occur at a certain frame time. Say you have an attack animation
+                                    and you only want the attack to occur when the sword is in front of you and not during anticipation, an event can be used to call it at the right time. For events, we are going to store functions
+                                    to event names. I do not want to care for each specific animation since event names could be more generic and call the same logic from different animations. E.g. the hit during a swing. 10 different animations
+                                    could all have a swing with the same callback. For this to work, we also need to briefly edit our AnimationManager and AnimationComponent to know the total frame time of an aniamtion but that we can already work out from existing values.
+                                </p>
+
+                                <p>
+                                    We define events in the animation itself. The idea is then that we can register to an event on the AnimationComponent and then use the AnimationManager to trigger any registered callbacks if the current animation reaches an event.
+                                    To get started, we need to add events to each animation. Below is an illustration showing how that will look in Json.
+                                </p>
+
+                                <!-- Image -->
+                                <div class="gallery" style="margin-top:15px;">
+                                    <a href="../assets/images/Blog-AnimationSystem/AnimationEvents.png">
+                                        <img src="../assets/images/Blog-AnimationSystem/AnimationEvents.png" style="width:45%;">
+                                    </a>
+                                </div>
+                                <p></p>
+
+                                <!-- 4.3 -->
+                                <h3 id="4.3" class="scroll-area">4.3 - Implementing The New System</h3>
+                                <p>
+                                    With the design ready, we can start the implementation. The first thing I focused on was the layers.
+                                </p>
+
+                                <!-- 4.3.1 -->
+                                <h4 id="4.3.1" class="scroll-area">4.3.1 - Adding Aditional Layers</h4>
+                                <p>
+                                    To get started with layers, I first used the concept above to modify our existing animation Json file to include layers. Here is the player's idle animation with a hair layer:
+                                </p>
+
+                                <!-- Idle Animation with Layers -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>PlayerIdle.anim</h4>
+<pre class="cppcode"><code>{
+    "name": "PlayerIdle",
+    "textures": [
+        "Player_Idle_1",
+        "Player_Idle_2",
+        "Player_Idle_3",
+        "Player_Idle_4"
+    ],
+    "frameTime": 200.0,
+    "cellWidth": 16,
+    "cellHeight": 16,
+    "frameCount": 4,
+    "loop": true,
+    "layers": {
+      "hair": [
+        {
+          "style1": [
+            "Player_Hair_Style1_Idle_1",
+            "Player_Hair_Style1_Idle_2",
+            "Player_Hair_Style1_Idle_3",
+            "Player_Hair_Style1_Idle_4"
+          ]
+        }
+      ]
+    }
+}
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <p></p>
+                                <p>
+                                    With the structure ready, we can modify our LoadAnimationFromFile function to include the new elements.
+                                    The previous animation code would check if we have the element and return if not. Because animations layers are optional,
+                                    we will only add them if they exist but if not, we simply don't do anything.
+                                </p>
+
+                                <p>
+                                    Before we load in the new data, we need to append the animation class to store layers, objects, and their associated textures. For this I used a map.
+                                    Our animation class now looks like this:
+                                </p>
+
+                                <!-- Animation class -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>Animation.h</h4>
+<pre class="cppcode"><code>// Typedefs exists to avoid confusion of map below
+typedef std::string LayerName;
+typedef std::string ObjectName;
+
+class Animation
+{
+public:
+    Animation(std::vector&lt;Texture2D*>& textures, const std::string& name, const float frameTime, const int cellWidth, const int cellHeight, const int frameCount, const bool loop)
+    : textures(textures)
+    , name(name)
+    , frameTime(frameTime)
+    , cellWidth(cellWidth)
+    , cellHeight(cellHeight)
+    , frameCount(frameCount)
+    , loop(loop)
+    , needsRecompile(false)
+    {
+        numberOfTextures = textures.size();
+        index = 0;
+    }
+
+public:
+    std::vector&lt;Texture2D*> textures;
+    std::map&lt;LayerName, std::map&lt;ObjectName, std::vector&lt;Texture2D*>>> layers;
+    std::string name;
+    float frameTime;
+    int cellWidth;
+    int cellHeight;
+    int frameCount;
+    bool loop;
+
+    bool needsRecompile;
+    std::filesystem::path filePath;
+
+private:
+    size_t numberOfTextures;
+    int index;
+
+friend class AnimationManager;
+};
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                                <p>
+                                    The animation class now includes a map of layername to another map of object name to textures. This outlines our Json perfectly.
+                                    I added some typedefs for the code to be self-explanatory. Just remember that in my case, a layer is a slot such as helmet, whilst objects are what exact helmet we want. E.g. Wooden helmet.
+                                </p>
+
+                                <p>
+                                    Now that we can store the layers, we can modify our loading function to include them. Here is the following code I added to AnimationManager::LoadAnimationFromFile().
+                                </p>
+
+                                <!-- LoadAnimationFromFile final -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>AnimationManager::LoadAnimationFromFile(const std::string& filePath)</h4>
+<pre class="cppcode"><code>// Above is code for loading in the animation (as soon in previous sections)
+...
+
+// Animation layers
+auto itr = document.FindMember("layers");
+if (itr != document.MemberEnd())
+{
+    for (auto& layersObj : itr->value.GetObj())
+    {
+        std::string layerName = layersObj.name.GetString();
+        if (!layers.contains(layerName))
+        {
+            layers[layerName] = std::map&lt;ObjectName, std::vector&lt;Texture2D*>>();
+        }
+
+        for (auto& layerMember : layersObj.value.GetArray())
+        {
+            for (auto& memberObj : layerMember.GetObj())
+            {
+                std::vector&lt;Texture2D*> textures;
+                std::string memberName = memberObj.name.GetString();
+                for (auto& layerTexture : memberObj.value.GetArray())
+                {
+                    textures.push_back(ResourceManager::GetTexture(layerTexture.GetString()));
+                }
+                layers[layerName][memberName] = textures;
+            }
+        }
+    }
+}
+
+// Finally, register the animation
+RegisterAnimation(filePath, textures, layers, name, frameTime ,cellWidth, cellWidth, frameCount, loop);
+</code></pre>
+                                    </li>
+                                </ul>
+
+                                <p></p>
+                                <p>
+                                    First of all, that is a lot of auto keywords. I use these when dealing with Json simply because I have not made a reader or writer class yet.
+                                    Anyway, here we loop through the layers section and find the appropriate data. I won't explain too much here since this is rapidJson calls and
+                                    dealing with the structure of Json. All we need to know is that it populates our layers section which we then use when registering the animation.
+                                    Registering adds the layers into the array we defined in Animation.h.
+                                </p>
+
+                                <!-- 4.3.2 -->
+                                <h4 id="4.3.2" class="scroll-area">4.3.2 - Setting Active Layers and Objects</h4>
+                                <p>
+                                    Now that layers exist within an animation, we need a way to set them active. I want the AnimationComponent to control this so that we have individual control over it
+                                    per component. This allows us to only use them when an owner needs it. For this example, I will continue to use the player and hair.
+                                </p>
+
+                                <p>
+                                    I added a new
+                                </p>
+
+                                <!-- AnimationComponent final -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>AnimationComponent.h</h4>
+<pre class="cppcode"><code>class AnimationComponent : public Component
+{
+public:
+    virtual void Start() override;
+    virtual void OnDestroy() override;
+
+    void ActivateLayer(const std::string& layerName); // Adds a string entry into the activeLayers vector.
+    void DeactivateLayer(const std::string& layerName); // Removes a string entry from the activeLayers vector.
+
+    void SetActiveObject(const std::string& layerName, const std::string& objectName); // Sets the object of the active layer in the activeObjects list.
+
+public:
+    Animation* currentAnimation;
+    std::map&lt;std::string, std::string> activeObjects;
+    std::vector&lt;std::string> activeLayers;
+    float currentFrameTime = 0;
+    int currentFrameIndex = 0;
+    bool playOnStart = true;
+    bool shouldPlay = false;
+};
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+                                <p>
+                                    Layers are now activated and deactivated directly from the component. I have added some comments to explain what the 3 new functions do. As they are quite simple,
+                                    I do not believe the .cpp is needed. They simply add and remove string entries from the vector.
+                                    With this change, AnimationComponents now have a link to the different layers and objects. Everything is set up as a string
+                                    in order to abstract the idea of layers. If I was making this for just one game, I would use IDs or an enum for readability. However, this engine's
+                                    goal is to stay useful for multiple projects so layers are abstract. For instance, not every game would need a helmet slot but might need hairstyles.
+                                </p>
+
+                                <!-- 4.3.3 -->
+                                <h4 id="4.3.3" class="scroll-area">4.3.3 - Rendering Layers</h4>
+                                <p>
+                                    We are almost there! We just need to actually render the data now. As I explained before, I am going to use a custom drawer to insert an entry into our sprite batching system.
+                                    To do this, I am editing the AnimationManager to loop through layers and add the element if present.
+                                </p>
+
+                                <p>
+                                    For a bit of context, CustomDraw is a struct that include rendering information such as order, texture, sorting layer, and the vertices to draw.
+                                    This information is used to add a new spritebatch from the given information. The order and sorting layer determines when to draw the sprite. Like mentioned previously,
+                                    all of this can be replaced by rendering the layers after the player. Each engine is different with how it renders so this part will differ to what is seen elsewhere.
+                                    If this system was made in an existing engine such as Unity, you would just have a transform under the player with a SpriteRenderer and manually set the sprite when needed.
+                                </p>
+
+                                <!-- AnimationManager layers -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>AnimationManager::UpdateAnimations()</h4>
+<pre class="cppcode"><code>// The code above this line sets the texture just like before. Nothing has been changed
+...
+
+// Reset custom draw vertices in order to avoid left over draws from previous frames.
+customDraw->verticies.clear();
+
+// Draw other layers here if needed. Firstly, we go through all enabled layers
+for (std::string& activeLayer : animationComponent->activeLayers)
+{
+    auto& animationLayers = animationComponent->currentAnimation->layers;
+    // Now we check if the animation and our component cares about the active layer
+    if (animationLayers.contains(activeLayer) && animationComponent->activeObjects.contains(activeLayer))
+    {
+        // Then we check what object we want to deal with. E.g. hair 1
+        std::string& activeObjectFromThisLayer = animationComponent->activeObjects[activeLayer];
+
+        if (animationLayers[activeLayer].contains(activeObjectFromThisLayer))
+        {
+            std::vector&lt;Texture2D*>& texturesToDraw = animationLayers[activeLayer][activeObjectFromThisLayer];
+            if (texturesToDraw.size() <= animationComponent->currentFrameIndex)
+            {
+                LOG_WARNING_F("Tried to select layer frame but the texture was not present. Layer: {}, Frame index: {}", activeLayer, animationComponent->currentFrameIndex);
+                continue;
+            }
+
+            Texture2D* frameTextureToDraw = texturesToDraw[animationComponent->currentFrameIndex];
+
+            customDraw->textureID = frameTextureToDraw->ID;
+            customDraw->sortingLayerID = spriteComponent->GetSortingLayer().GetLayerOrder();
+            customDraw->sortingOrderID = spriteComponent->GetSortingOrder() - 0.01;
+
+            Transform* spriteTransform = spriteComponent->GetOwnerRef()->GetTransform();
+            const Vector2& spritePosition = spriteTransform->GetPositionRef();
+
+            const Vector2& size = spriteComponent->GetSize();
+            Vector2 sizeCopy = size * spriteTransform->GetScale();
+            if (spriteComponent->GetFlip())
+            {
+                sizeCopy.x *= -1;
+            }
+
+            const Vector2& pivot = spriteComponent->GetPivot();
+            const Color& color = spriteComponent->GetColor();
+
+            SpriteComponent::GenerateVerticies(customDraw->verticies, spritePosition, sizeCopy, pivot, color, true);
+        }
+    }
+}
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+                                <p>
+                                    As seen, I loop through every active layer from the AnimationComponent and check if there's an active object present. If so,
+                                    I then get the texture associated with the current animation and the current index.
+                                </p>
+
+                                <p>
+                                    The customDrawer is added to the render queue in Initialize. As said above, this is where a custom draw call would be instead after the player is renderered.
+                                    Because I sort everything after the render queue is set up, I am fine to add it before as it won't be processed yet. The order has the -0.01 because
+                                    everything is sorted based on the y position, another custom element.
+                                </p>
+
+                                <p>
+                                    With the rendering sorted, all we need to do is head over to the game side, activate the hair layer and set the object to style1 which matches our animation.
+                                </p>
+
+                                <!-- Player -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>Player::Start()</h4>
+<pre class="cppcode"><code>void Player::Start()
+{
+    GameObject::Start();
+
+    cameraComponent->SetSize(150);
+    cameraComponent->SetBackgroundColor(Color(32, 127, 255, 1));
+    
+    spriteComponent->SetPivot(Pivot::BottomCenter);
+    spriteComponent->SetTexture("Player");
+    spriteComponent->SetSortingLayer("Player");
+    
+    // Enable animation layers and set the hair style to style1
+    animationComponent->ActivateLayer("hair");
+    animationComponent->SetActiveObject("hair", "style1");
+    
+    circleColliderComponent->drawDebug = true;
+    circleColliderComponent->SetRadius(8.0);
+    circleColliderComponent->SetOffset(Vector2(0.0, spriteComponent->GetSize().y / 2));
+    
+    keyDownEventIndex = Events::Subscribe(this, &Player::OnKeyDown);
+    keyUpEventIndex = Events::Subscribe(this, &Player::OnKeyUp);
+    
+    AnimationManager::Play(this->GetPtr(), "PlayerIdle");
+    
+    SceneManager::RegisterTickable(this->GetPtr());
+}
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                                <!-- 4.3.4 -->
+                                <h4 id="4.3.4" class="scroll-area">4.3.4 - Setting up Animation Events</h4>
+                                <p>
+                                    Now that layers are working properly, we can look at events. The idea of events is as mentioned that we want to execute callbacks at specific points during an animation. An example of this
+                                    is footsteps when a player walks.
+                                </p>
+
+                                <p>
+                                    We start by adding events to our .anim file. I want ev ents to be triggered at any point in the animation so we will have to introduce totalFrameTime into our system. This means that we can add
+                                    an event at any point. Let's have a look at our animation now:
+                                </p>
+
+
+                                <!-- PlayerIdle events -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>PlayerIdle.anim</h4>
+<pre class="cppcode"><code>{
+    "name": "PlayerIdle",
+    "textures": [
+        "Player_Idle_1",
+        "Player_Idle_2",
+        "Player_Idle_3",
+        "Player_Idle_4"
+    ],
+    "frameTime": 200.0,
+    "cellWidth": 16,
+    "cellHeight": 16,
+    "frameCount": 4,
+    "loop": true,
+    "layers": {
+      "hair": [
+        {
+          "style1": [
+            "Player_Hair_Style1_Idle_1",
+            "Player_Hair_Style1_Idle_2",
+            "Player_Hair_Style1_Idle_3",
+            "Player_Hair_Style1_Idle_4"
+          ]
+        }
+      ]
+    },
+    "events": {
+      "testEvent": 
+      {
+        "time": 100.0
+      }
+   }
+}
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                                <p>
+                                    Similar to layers, we define events has objects with times. I added a limitation here that events cannot appear twice. This means that for something like footsteps, you would simply have to
+                                    use two events with different names. They will however be able to use the same callback. Other animations can also use the same name.
+                                </p>
+
+                                <p>
+                                    The next step should be pretty self-explanatory since we are repeating steps from events. We want to add an entry to our animation class to store this data. However, we also want to mimic this on the AnimationComponent class
+                                    since the animation itself shouldn't be modified. We therefore make changes to both classes to include the new entry. For now, let's focus on the animation class.
+                                </p>
+
+                                <!-- Animation class events -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>Animation.h</h4>
+<pre class="cppcode"><code>typedef std::string LayerName;
+typedef std::string ObjectName;
+typedef std::string EventName;
+
+class Animation
+{
+public:
+    Animation(std::vector<Texture2D*>& textures, const std::string& name, const float frameTime, const int cellWidth, const int cellHeight, const int frameCount, const bool loop)
+        : textures(textures)
+        , name(name)
+        , frameTime(frameTime)
+        , cellWidth(cellWidth)
+        , cellHeight(cellHeight)
+        , frameCount(frameCount)
+        , loop(loop)
+        , needsRecompile(false)
+    {
+        numberOfTextures = textures.size();
+        index = 0;
+    }
+    
+    ~Animation()
+    {
+        layers.clear();
+        events.clear();
+    }
+
+public:
+    std::vector&lt;Texture2D*> textures;
+    std::map&lt;LayerName, std::map&lt;ObjectName, std::vector&lt;Texture2D*>>> layers;
+    std::map&lt;EventName, float> events;
+    std::string name;
+    float frameTime;
+    int cellWidth;
+    int cellHeight;
+    int frameCount;
+    bool loop;
+    
+    bool needsRecompile;
+    std::filesystem::path filePath;
+
+private:
+    size_t numberOfTextures;
+    int index;
+
+friend class AnimationManager;
+};
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+                                <p>
+                                    For the events, we only need to care about the name and time that we introduced in our Json file. We then modify our LoadAnimationFromFile function to take in these new parameters.
+                                </p>
+
+                                <!-- Animation class events -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>LoadAnimationFromFile(const std::string& filePath)</h4>
+<pre class="cppcode"><code>// Code above loads in our data as shown in previous sections
+...
+
+// Events
+auto itr2 = document.FindMember("events");
+if (itr2 != document.MemberEnd())
+{
+    for (auto& eventObj : itr2->value.GetObj())
+    {
+        std::string eventName = eventObj.name.GetString();
+        if (!events.contains(eventName))
+        {
+            events[eventName] = 0.0;
+            auto timeMember = eventObj.value.GetObj().FindMember("time");
+            if (timeMember != eventObj.value.MemberEnd())
+            {
+                events[eventName] = timeMember->value.GetFloat();
+            }
+        }
+    }
+}
+
+// Register animation underneath
+...
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                                <!-- 4.3.5 -->
+                                <h4 id="4.3.5" class="scroll-area">4.3.5 - Registering to Events</h4>
+                                <p>
+                                    With the animation now holding data on events, we need to make it so that we can register onto an event. E.g. the player listening for walking.
+                                    To do so, we are going to need to add events into the AnimationComponent. Like mentioned, we don't want to modify the animation directly so we use the component
+                                    in order to give every owner a unique hook to the events.
+                                </p>
+
+                                <p>
+                                    I was originally going to use our event system for this but I did not want to check for event names every time the event triggered to then delegate the callback task.
+                                    Instead, I added a new system onto this to register functions onto the AnimationComponent. For this, we are going to need a template so we can call any instance's function
+                                </p>
+
+                                <p>
+                                    To get started, I created a new struct called AnimationEventData that holds a void* instance, and an std::function&lt;void()>. This is then added into a map on the AnimationComponent
+                                    where we can manually add entries to the data.
+                                </p>
+
+                                <!-- AnimationEventData -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>AnimationEventData.h</h4>
+<pre class="cppcode"><code>struct AnimationEventData
+{
+    AnimationEventData(void* inInstance, std::function&lt;void()>& inCallback)
+        : instance(inInstance)
+        , callback(inCallback)
+        , hasTriggered(false)
+    {}
+    
+    void* instance;
+    std::function&lt;void()> callback;
+    bool hasTriggered;
+};
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                                <!-- AnimationComponent Events -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>AnimationComponent.h</h4>
+<pre class="cppcode"><code>class AnimationComponent : public Component
+{
+public:
+    virtual void Start() override;
+    virtual void OnDestroy() override;
+    
+    void ActivateLayer(const std::string& layerName);
+    void DeactivateLayer(const std::string& layerName);
+    
+    void SetActiveObject(const std::string& layerName, const std::string& objectName);
+
+template&lt;class T>
+void RegisterEvent(const std::string& eventName, T* instance, void (T::* callback)())
+{
+    std::function&lt;void()> function = std::bind(callback, instance);
+    events[eventName].push_back(AnimationEventData(instance, function));
+}
+
+template&lt;class T>
+void UnregisterEvent(const std::string& eventName, T* instance, void (T::* callback)())
+{
+    std::vector&lt;AnimationEventData>& eventList = events[eventName];
+    for (auto it = eventList.begin(); it != eventList.end();)
+    {
+        if (it->instance == instance && it->callback.target_type() == typeid(callback))
+        {
+            it = eventList.erase(it);
+        }
+            else
+        {
+            ++it;
+        }
+    }
+    if (eventList.empty())
+    {
+        events.erase(eventName);
+    }
+}
+
+void ResetEvent(const std::string& eventName); // Loops over the vector in the eventName and sets hasTriggered to false.
+
+public:
+    Animation* currentAnimation;
+    std::map&lt;std::string, std::string> activeObjects;
+    std::vector&lt;std::string> activeLayers;
+    std::map&lt;std::string, std::vector&lt;AnimationEventData>> events;
+    float totalElapsedFrameTime = 0.0f;
+    float currentFrameTime = 0;
+    int currentFrameIndex = 0;
+    bool playOnStart = true;
+    bool shouldPlay = false;
+};
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+                                <p>
+                                    As we can see, we use the map for the eventName and then a vector of AnimationEventData. I wanted the ability to bind multiple functions/instances to a single event.
+                                    This is because multiple animations can share the same event name. E.g. swinging a weapon. The callback could deal damage. For this, you would only have to register
+                                    a single event instead of many. The templated function comes into play because we want to keep track of the instance that registered the event. By storing this information directly
+                                    in the map, we can avoid checking any strings within callbacks since our system will eventually do it for us.
+                                </p>
+
+                                <p>
+                                    Finally, we can register a callback within our player. For now, let us just hook a function up to the idle testEvent that we defined in the Json file earlier.
+                                </p>
+
+                                <!-- Player Register Animation Events -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>Player::Start()</h4>
+<pre class="cppcode"><code>void Player::Start()
+{
+    GameObject::Start();
+    
+    cameraComponent->SetSize(150);
+    cameraComponent->SetBackgroundColor(Color(32, 127, 255, 1));
+    
+    spriteComponent->SetPivot(Pivot::BottomCenter);
+    spriteComponent->SetTexture("Player");
+    spriteComponent->SetSortingLayer("Player");
+    
+    animationComponent->ActivateLayer("hair");
+    animationComponent->SetActiveObject("hair", "style1");
+    animationComponent->RegisterEvent("testEvent", this, &Player::TestEventCallback); // This callback simply logs
+    
+    circleColliderComponent->drawDebug = true;
+    circleColliderComponent->SetRadius(8.0);
+    circleColliderComponent->SetOffset(Vector2(0.0, spriteComponent->GetSize().y / 2));
+    
+    keyDownEventIndex = Events::Subscribe(this, &Player::OnKeyDown);
+    keyUpEventIndex = Events::Subscribe(this, &Player::OnKeyUp);
+    onForcePlayerTeleportEvent = Events::Subscribe(this, &Player::OnForcePlayerTeleport);
+    
+    inventoryComponent->AddItem(ItemType::STICK);
+    inventoryComponent->AddItem(ItemType::STICK);
+    inventoryComponent->AddItem(ItemType::STONE);
+    
+    AnimationManager::Play(this->GetPtr(), "PlayerIdle");
+    
+    SceneManager::RegisterTickable(this->GetPtr());
+}
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                                <!-- 4.3.6 -->
+                                <h4 id="4.3.6" class="scroll-area">4.3.6 - Triggering Event Callbacks</h4>
+                                <p>
+                                    With the ability to register and unregister events, all we have to do now is call any callback hooked up to the event whenever the event has been hit.
+                                    To do so, we need to modify our AnimationManager slightly. Firstly, we introduce the concept of totalFrameTime. Currently, we only track the time within a current frame.
+                                    Because I decided to let an animation event call whenever, we need to know the total length played. We can already work this out based on the currentFrameTime and our currentAnimationIndex.
+                                </p>
+
+                                <p>
+                                    After adding the totalFrameTime, we can simply loop over any event in the current animation, see if the totalFrameTime is greater than the duration, and then call the callbacks if they are present.
+                                    We also need the concept of the animation having restarted so we can set hasTriggered to false. Otherwise, events would only ever call once. This would not be ideal for looping animations.
+                                </p>
+
+                                <p>
+                                    Let us take a look at the final AnimationManager code for updating animations.
+                                </p>
+
+                                <!-- AnimationManager UpdateAnimations with events -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>AnimationManager::UpdateAnmations()</h4>
+<pre class="cppcode"><code>void AnimationManager::UpdateAnimations()
+{
+    if (animationComponents.size() <= 0)
+    {
+        return;
+    }
+
+    for (int i = 0; i < animationComponents.size(); ++i)
+    {
+        AnimationComponent* animationComponent = animationComponents[i];
+        SpriteComponent* spriteComponent = animationComponent->GetOwner()->GetComponent&lt;SpriteComponent>();
+
+        if (animationComponent == nullptr || spriteComponent == nullptr)
+            continue;
+
+        if (!animationComponent->shouldPlay)
+            continue;
+
+        Animation* currentAnimation = animationComponent->currentAnimation;
+
+        if (currentAnimation == nullptr)
+            continue;
+
+        if (animationComponent->currentFrameIndex > currentAnimation->frameCount)
+        {
+            if (!currentAnimation->loop)
+                continue;
+        }
+
+        if (currentAnimation->textures.size() < 1)
+            continue;
+
+        animationComponent->currentFrameTime += (float)Time::GetDeltaTime() * 1000.0f;
+        bool didCurrentAnimationRestartThisFrame = false; // Our new bool to see if an animation restarted.
+
+        // Go to next sprite or stop the animation
+        if (animationComponent->currentFrameTime > currentAnimation->frameTime)
+        {
+            if (!currentAnimation->loop && animationComponent->currentFrameIndex < currentAnimation->frameCount - 1
+            || currentAnimation->loop)
+            {
+                animationComponent->currentFrameIndex++;
+            }
+
+            if (animationComponent->currentFrameIndex >= currentAnimation->frameCount && currentAnimation->loop)
+            {
+                animationComponent->currentFrameIndex = 0;
+                didCurrentAnimationRestartThisFrame = true; // Animation restarted. We set the flag here to use later.
+            }
+
+            animationComponent->currentFrameTime -= currentAnimation->frameTime; // Notice I corrected this. Before, it only reset to 0.
+        }
+
+        animationComponent->totalElapsedFrameTime = (animationComponent->currentFrameIndex * currentAnimation->frameTime) + animationComponent->currentFrameTime;
+
+        if (currentAnimation->textures.size() <= animationComponent->currentFrameIndex)
+        {
+            continue;
+        }
+
+        Texture2D* texture = currentAnimation->textures[animationComponent->currentFrameIndex];
+        spriteComponent->SetTexture(texture);
+
+        customDraw->verticies.clear();
+
+        // Draw other layers here if needed. Firstly, we go through all enabled layers
+        for (std::string& activeLayer : animationComponent->activeLayers)
+        {
+            auto& animationLayers = animationComponent->currentAnimation->layers;
+            // Now we check if the animation and our component cares about the active layer
+            if (animationLayers.contains(activeLayer) && animationComponent->activeObjects.contains(activeLayer))
+            {
+                // Then we check what object we want to deal with. E.g. hair 1
+                std::string& activeObjectFromThisLayer = animationComponent->activeObjects[activeLayer];
+
+                if (animationLayers[activeLayer].contains(activeObjectFromThisLayer))
+                {
+                    std::vector&lt;Texture2D*>& texturesToDraw = animationLayers[activeLayer][activeObjectFromThisLayer];
+                    if (texturesToDraw.size() <= animationComponent->currentFrameIndex)
+                    {
+                        LOG_WARNING_F("Tried to select layer frame but the texture was not present. Layer: {}, Frame index: {}", activeLayer, animationComponent->currentFrameIndex);
+                        continue;
+                    }
+
+                    Texture2D* frameTextureToDraw = texturesToDraw[animationComponent->currentFrameIndex];
+
+                    customDraw->textureID = frameTextureToDraw->ID;
+                    customDraw->sortingLayerID = spriteComponent->GetSortingLayer().GetLayerOrder();
+                    customDraw->sortingOrderID = spriteComponent->GetSortingOrder() - 0.01;
+                    
+                    Transform* spriteTransform = spriteComponent->GetOwnerRef()->GetTransform();
+                    const Vector2& spritePosition = spriteTransform->GetPositionRef();
+                    
+                    const Vector2& size = spriteComponent->GetSize();
+                    Vector2 sizeCopy = size * spriteTransform->GetScale();
+                    if (spriteComponent->GetFlip())
+                    {
+                        sizeCopy.x *= -1;
+                    }
+
+                    const Vector2& pivot = spriteComponent->GetPivot();
+                    const Color& color = spriteComponent->GetColor();
+                    
+                    SpriteComponent::GenerateVerticies(customDraw->verticies, spritePosition, sizeCopy, pivot, color, true);
+                }
+            }
+        }
+
+        // Events
+        for (auto& [eventName, eventDuration] : currentAnimation->events)
+        {
+            if (animationComponent->events.contains(eventName))
+            {
+                for (auto& animationEventData : animationComponent->events[eventName])
+                {
+                    if (animationComponent->totalElapsedFrameTime >= eventDuration)
+                    {
+                        if (!animationEventData.hasTriggered)
+                        {
+                            animationEventData.hasTriggered = true;
+        
+                            auto& callback = animationEventData.callback;
+                            callback();
+                        }
+                    }
+                    else if (didCurrentAnimationRestartThisFrame)
+                    {
+                        animationEventData.hasTriggered = false;
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+
+                                <p>
+                                    The last part of the code above is our new addition. We loop over the animation's detail and match it with the current AnimationComponent. This ensures that every event is called when needed.
+                                    Let's have a look at the output from the player now that the idle animation has been hooked up and is calling.
+                                </p>
+
+                                <!-- Player Register Animation Events -->
+                                <ul class="code-block" style="margin-top: 15px;">
+                                    <li class="">
+                                        <h4>Console Output</h4>
+<pre class="cppcode"><code>15:43.57 [Info] [Player.cpp | Function: TestEventCallback | Line: 194] Animation Event Was Triggered
+15:43.58 [Info] [Player.cpp | Function: TestEventCallback | Line: 194] Animation Event Was Triggered
+15:43.59 [Info] [Player.cpp | Function: TestEventCallback | Line: 194] Animation Event Was Triggered
+15:44.00 [Info] [Player.cpp | Function: TestEventCallback | Line: 194] Animation Event Was Triggered
+15:44.01 [Info] [Player.cpp | Function: TestEventCallback | Line: 194] Animation Event Was Triggered
+15:44.01 [Info] [Player.cpp | Function: TestEventCallback | Line: 194] Animation Event Was Triggered
+15:44.02 [Info] [Player.cpp | Function: TestEventCallback | Line: 194] Animation Event Was Triggered
+15:44.03 [Info] [Player.cpp | Function: TestEventCallback | Line: 194] Animation Event Was Triggered
+</code></pre>
+                                    </li>
+                                </ul>
+                                <p></p>
+                                <p>And that's it! We have now succesfully gotten layers and events hooked up and can start a proper customisation and gameplay part of any game within this engine.</p>
+
+                                <!-- 5.0 -->
+                                <p></p>
+                                <h2 id="5.0" class="mt-0 ml-0 scroll-area">5.0 - Conclusion and Showcase</h2>
+                                <p>
+                                    That was my 4 days spent trying to come up with a nice animation system for equipment. There is still a lot of optimization to do but I am really happy with how this looks!
+                                </p>
+
+                                <!-- 5.1 -->
+                                <h4 id="5.1" class="scroll-area">5.1 - Showcase</h4>
+
+                                <h5>Layers</h5>
+                                <p>
+                                    Below is a video of the layers working. I added a quick debug menu to change layers. It simply uses the SetObject function between style1 and an empty string.
+                                    It is really nice to see that there is no issue with the syncing of the animation and the layer because we submit the correct index frame.
+                                </p>
+
+                                <video width="800" height="450" controls muted autoplay loop>
+                                    <source src="../assets/videos/blog-animation/LayersShowcase.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                <h5>Events</h5>
+                                <p>
+                                    Below is another video demonstrating animation events. Because the game does not offer sound or any attack animation, the best
+                                    thing I could think of at the time of demonstrating this was to spawn an item every time the idle animation hits 100ms.
+                                </p>
+                                <video width="800" height="450" controls muted autoplay loop>
+                                    <source src="../assets/videos/blog-animation/EventsShowcase.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                <h5>Bonus</h5>
+                                <p>
+                                    I added a helmet to the player and made it so that when you select the helmet, it deactivates the hair layer.
+                                </p>
+                                <video width="800" height="450" controls muted autoplay loop>
+                                    <source src="../assets/videos/blog-animation/AnimationLayers2Showcase.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                <!-- 5.2 -->
+                                <h4 id="5.2" class="scroll-area">5.2 - Conclusion</h4>
+                                <p>
+                                    Having spent 4 days on this (minus the time it took to write this blog in pure HTML. I need a better tool), I do believe I got it working really well! There are obvious areas to expand on,
+                                    write better code for, and check performance on. At the end of the day, this was my first time expanding on animation outside of the existing solution, and the new system can do a lot! My next step
+                                    is to go through the existing code and optimise it where I can. Luckily, our engine has a profiler so we can scope out functions and see what's absolutely awful. I imagine the containers I chose will change a lot
+                                    whenever I take another look at this.
+                                </p>
+
+                                <p>
+                                    If I was to redo this, I would probably do more research into actual implementations of systems instead of just looking at games. However, I do believe 2D is one of those fields
+                                    where animation isn't looked at to the same extent as 3D. This doesn't mean there aren't any good resources, I just haven't looke for them.
+                                </p>
+
+                                <p>
+                                    I also want to start creating more blogs on the process of this engine since it is super enjoyable and is what I will use for future 2D projects.
+                                </p>
                             </div>
                         </div>        
                     </main>
@@ -730,36 +1749,36 @@ AnimationManager::RegisterAnimation(idleAnimation->name, idleAnimation);
         <!-- Contact -->
         <section id="contact" class="section-4 odd">
             <div class="container">
-				<div class="row">
-					<div class="col-12 col-md-6 align-self-start text-center text-md-left">
-						<div class="row intro">
-							<div class="col-12 p-0">
+                <div class="row">
+                    <div class="col-12 col-md-6 align-self-start text-center text-md-left">
+                        <div class="row intro">
+                            <div class="col-12 p-0">
 
-								<div class="step-title">
-									<h2 class="header-color">Contact</h2>
-									<p>Want to get in contact with me?</p>
-									<h5 class="odd">Email: <i class="alt">benjaminnilsson1997@gmail.com</i></h5>
-									<p>You can also contact me through <br>social media if preferred.</p>
-								</div>
-								
-								<ul class="navbar-nav share-list mt-0 ml-auto">
-									<li class="nav-item">
-										<a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
-									</li>
-									<li class="nav-item">
-										<a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
-									</li>
-									<li class="nav-item">
-										<a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
-									</li>
-									<li class="nav-item">
-										<a href="https://github.com/BenNilsson" class="nav-link" target="_blank"><i class="icon-social-github"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                                <div class="step-title">
+                                    <h2 class="header-color">Contact</h2>
+                                    <p>Want to get in contact with me?</p>
+                                    <h5 class="odd">Email: <i class="alt">benjaminnilsson1997@gmail.com</i></h5>
+                                    <p>You can also contact me through <br>social media if preferred.</p>
+                                </div>
+                                
+                                <ul class="navbar-nav share-list mt-0 ml-auto">
+                                    <li class="nav-item">
+                                        <a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://github.com/BenNilsson" class="nav-link" target="_blank"><i class="icon-social-github"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- #region Global ============================ -->
