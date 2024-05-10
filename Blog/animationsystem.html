@@ -233,7 +233,7 @@
                                 <p>
                                     The goal is to have a system that can support different layouts for armor and accessories. I also want this system to introduce
                                     events so I can trigger certain game parts during an animation. E.g. dealing damage when a sword swings and not during anticipation.
-                                    Finally, the I want to be able to hot-reload animations for quicker iteration. So to recap, here is a list of requirements:
+                                    Finally, I want to be able to hot-reload animations for quicker iteration. So to recap, here is a list of requirements:
                                 </p>
 
                                 <h3 id="1.1" class="scroll-area">1.1 - Requirements</h3>
@@ -528,7 +528,7 @@ void AnimationManager::OnAnimationComponentPendingDestroy(AnimationComponentPend
                                 <h3 id="2.2" class="mt-0 ml-0 scroll-area">2.2 - Conclusion of Current System</h3>
                                 <p>
                                     When playing, the animation manager will loop over all AnimationComponents and update the component to display the
-                                    correct sprites. This means that at the moment, we have no concept of layers, sockets, or anything. All we have is the idea
+                                    correct sprites. This means that at the moment, we have no concept of layers, or events. All we have is the idea
                                     of going through a set of sprites. The code is also not very optimised but that will not be a focus on this blog.
                                 </p>
                                 <p>
@@ -1033,10 +1033,6 @@ RegisterAnimation(filePath, textures, layers, name, frameTime ,cellWidth, cellWi
                                     per component. This allows us to only use them when an owner needs it. For this example, I will continue to use the player and hair.
                                 </p>
 
-                                <p>
-                                    I added a new
-                                </p>
-
                                 <!-- AnimationComponent final -->
                                 <ul class="code-block" style="margin-top: 15px;">
                                     <li class="">
@@ -1151,7 +1147,7 @@ for (std::string& activeLayer : animationComponent->activeLayers)
                                 <p>
                                     The customDrawer is added to the render queue in Initialize. As said above, this is where a custom draw call would be instead after the player is renderered.
                                     Because I sort everything after the render queue is set up, I am fine to add it before as it won't be processed yet. The order has the -0.01 because
-                                    everything is sorted based on the y position, another custom element.
+                                    everything is sorted based on the y position, another custom element. Therefore, I have to add a tiny number so that it actually appearas on top of the owner.
                                 </p>
 
                                 <p>
@@ -1201,7 +1197,7 @@ for (std::string& activeLayer : animationComponent->activeLayers)
                                 </p>
 
                                 <p>
-                                    We start by adding events to our .anim file. I want ev ents to be triggered at any point in the animation so we will have to introduce totalFrameTime into our system. This means that we can add
+                                    We start by adding events to our .anim file. I want events to be triggered at any point in the animation so we will have to introduce totalFrameTime into our system. This means that we can add
                                     an event at any point. Let's have a look at our animation now:
                                 </p>
 
@@ -1248,7 +1244,7 @@ for (std::string& activeLayer : animationComponent->activeLayers)
                                 <p></p>
 
                                 <p>
-                                    Similar to layers, we define events has objects with times. I added a limitation here that events cannot appear twice. This means that for something like footsteps, you would simply have to
+                                    Similar to layers, we define events as objects with times. I added a limitation here that events cannot appear twice. This means that for something like footsteps, you would simply have to
                                     use two events with different names. They will however be able to use the same callback. Other animations can also use the same name.
                                 </p>
 
@@ -1268,7 +1264,7 @@ typedef std::string EventName;
 class Animation
 {
 public:
-    Animation(std::vector<Texture2D*>& textures, const std::string& name, const float frameTime, const int cellWidth, const int cellHeight, const int frameCount, const bool loop)
+    Animation(std::vector&lt;Texture2D*>& textures, const std::string& name, const float frameTime, const int cellWidth, const int cellHeight, const int frameCount, const bool loop)
         : textures(textures)
         , name(name)
         , frameTime(frameTime)
@@ -1573,7 +1569,7 @@ public:
             animationComponent->currentFrameTime -= currentAnimation->frameTime; // Notice I corrected this. Before, it only reset to 0.
         }
 
-        animationComponent->totalElapsedFrameTime = (animationComponent->currentFrameIndex * currentAnimation->frameTime) + animationComponent->currentFrameTime;
+        animationComponent->totalElapsedFrameTime = (animationComponent->currentFrameIndex * currentAnimation->frameTime) + animationComponent->currentFrameTime; // Total frame time is calculated here from existing values
 
         if (currentAnimation->textures.size() <= animationComponent->currentFrameIndex)
         {
@@ -1660,7 +1656,7 @@ public:
                                 <p></p>
 
                                 <p>
-                                    The last part of the code above is our new addition. We loop over the animation's detail and match it with the current AnimationComponent. This ensures that every event is called when needed.
+                                    The last part of the code above is our new addition. We loop over the animation's data and match it with the current AnimationComponent. This ensures that every event is called when needed.
                                     Let's have a look at the output from the player now that the idle animation has been hooked up and is calling.
                                 </p>
 
@@ -1715,7 +1711,7 @@ public:
 
                                 <h5>Bonus</h5>
                                 <p>
-                                    I added a helmet to the player and made it so that when you select the helmet, it deactivates the hair layer.
+                                    I added a helmet to the player and made it so that when you select the helmet, it deactivates the hair layer. This achieves the idea of equipping armor which I originally set as a goal.
                                 </p>
                                 <video width="800" height="450" controls muted autoplay loop>
                                     <source src="../assets/videos/blog-animation/AnimationLayers2Showcase.mp4" type="video/mp4">
@@ -1733,7 +1729,7 @@ public:
 
                                 <p>
                                     If I was to redo this, I would probably do more research into actual implementations of systems instead of just looking at games. However, I do believe 2D is one of those fields
-                                    where animation isn't looked at to the same extent as 3D. This doesn't mean there aren't any good resources, I just haven't looke for them.
+                                    where animation isn't looked at to the same extent as 3D. This doesn't mean there aren't any good resources, I just haven't looked for them.
                                 </p>
 
                                 <p>
