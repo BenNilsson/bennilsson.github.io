@@ -1,0 +1,14 @@
+/* Theme Settings */
+:root {
+    --header-bg-color: #2f2f2f;
+    --nav-item-color: #f5f5f5;
+    --top-nav-item-color: #f5f5f5;
+    --hero-bg-color: #181818;
+    --section-1-bg-color: #2f2f2f;
+    --section-2-bg-color: #181818;
+    --section-3-bg-color: #181818;
+    --section-4-bg-color: #181818;
+    --section-5-bg-color: #181818;
+    --section-6-bg-color: #181818;
+    --footer-bg-color: #2f2f2f;
+}

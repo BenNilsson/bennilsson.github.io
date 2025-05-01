@@ -36,6 +36,11 @@ jQuery(function ($) {
 
     'use strict';
 
+    // Remove #home hash on page load if present
+    if (window.location.hash === '#home') {
+        history.replaceState(null, '', window.location.pathname);
+    }
+
     let preloader = $('.preloader');
 
     setTimeout(function() {
@@ -115,6 +120,8 @@ jQuery(function ($) {
     $(document).ready(function() {
         if (position > 0) {
             navbar.addClass('navbar-sticky');
+            navbar.addClass('visible');
+            navbar.addClass('navbar-fixed');
         }
         toTop.hide();
     })
@@ -182,31 +189,24 @@ jQuery(function ($) {
                 $(this).addClass('smooth-anchor');
             }
         }
-
-        let body = $('body');
-
-        if(this.hasAttribute('href') && ! body.hasClass('home')) {
-            let href = $(this).attr('href');
-            if (href.length > 1 && href.indexOf('#') != -1) {
-                $(this).removeClass('smooth-anchor');
-                $(this).attr('href', '/'+href);
-            }
-        }
     })
 
     $(document).on('click', '.smooth-anchor', function (e) {
         e.preventDefault();
 
         let href   = $(this).attr('href');
-        let target = $.attr(this, 'href');
+        let targetSelector = href.substring(href.indexOf('#'));
 
-        if($(target).length > 0) {
-        
-            if (href.length > 1 && href.indexOf('#') != -1) {
+        if($(targetSelector).length > 0) {
+
+            if (href.indexOf('#') != -1) {
                 $('html, body').animate({
-                    scrollTop: $(target).offset().top
-                }, 500);
+                    scrollTop: $(targetSelector).offset().top
+                }, 650, 'easeInOutQuad');
             }
+        }
+        else if (href.indexOf('#') != -1 && href.substring(0, href.indexOf('#')) !== window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1) && href.charAt(0) === '/') {
+             window.location.href = href;
         }
     })
 
@@ -460,7 +460,36 @@ jQuery(function($) {
     function particles(type, ID) {
 
         if(type === 'default') {
-            particlesJS(ID,{particles:{number:{value:80,density:{enable:!0,value_area:800}},color:{value:"#ffffff"},shape:{type:"circle",stroke:{width:0,color:"#000000"},polygon:{nb_sides:5},image:{src:"img/github.svg",width:100,height:100}},opacity:{value:.25,random:!1,anim:{enable:!1,speed:1,opacity_min:.1,sync:!1}},size:{value:5,random:!0,anim:{enable:!1,speed:40,size_min:.1,sync:!1}},line_linked:{enable:!0,distance:150,color:"#ffffff",opacity:.25,width:1},move:{enable:!0,speed:6,direction:"none",random:!1,straight:!1,out_mode:"out",attract:{enable:!1,rotateX:600,rotateY:1200}}},interactivity:{detect_on:"canvas",events:{onhover:{enable:0,mode:"repulse"},onclick:{enable:!0,mode:"push"},resize:!0},modes:{grab:{distance:400,line_linked:{opacity:1}},bubble:{distance:400,size:40,duration:2,opacity:8,speed:3},repulse:{distance:200},push:{particles_nb:4},remove:{particles_nb:2}}},retina_detect:!0,config_demo:{hide_card:!1,background_color:"#b61924",background_image:"",background_position:"50% 50%",background_repeat:"no-repeat",background_size:"cover"}});
+            particlesJS(ID,{
+                "particles": {
+                    "number": { "value": 150, "density": { "enable": true, "value_area": 900 } },
+                    "color": { "value": "#ffffff" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.2 },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": {
+                        "enable": false,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.1,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1.5,
+                        "out_mode": "out"
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": { "enable": false },
+                        "onclick": { "enable": false },
+                        "resize": true
+                    }
+                },
+                "retina_detect": true
+            });
         }
 
         if(type === 'bubble') {

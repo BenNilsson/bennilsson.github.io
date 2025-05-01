@@ -41,88 +41,24 @@
         =============================================== -->
         <link rel="stylesheet" href="../assets/css/default.css">
         <link rel="stylesheet" href="../assets/css/theme-light-blue.css">
-
-        <!-- ==============================================
-        Theme Settings
-        =============================================== -->
-        <style>
-            :root {
-                --header-bg-color: #2f2f2f;
-                --nav-item-color: #f5f5f5;
-                --top-nav-item-color: #f5f5f5;
-                --hero-bg-color: #181818;
-
-                --section-1-bg-color: #2f2f2f;
-                --section-2-bg-color: #181818;
-                --section-3-bg-color: #181818;
-                --section-4-bg-color: #181818;
-                --section-5-bg-color: #181818;
-                --section-6-bg-color: #181818;
-                
-                --footer-bg-color: #2f2f2f;
-            }
-        </style>
+        <link rel="stylesheet" href="../assets/css/theme-settings.css">
         
     </head>
 
     <body class="theme-mode-dark">
 
-        <!-- Header -->
+        <!-- Include external navbar -->
         <header id="header">
-
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand navbar-fixed">
-                <div class="container header">
-
-                    <!-- Navbar Brand-->
-                    <a class="navbar-brand" href="#">
-                        Ben Nilsson
-                    </a>
-
-                    <!-- Nav holder -->
-                    <div class="ml-auto"></div>
-
-                    <!-- Navbar Items -->
-                    <ul class="navbar-nav items">
-                        <li class="nav-item">
-                            <a href="../index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../Portfolio/index.html" class="nav-link">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../Blog/index.html" class="nav-link">Blog</a>
-                        </li>
-						<li class="nav-item">
-                            <a href="../Contact/index.html" class="nav-link">Contact</a>
-                        </li>
-                    </ul>
-
-                    <!-- Navbar Icons -->
-                    <ul class="navbar-nav icons">
-                        <li class="nav-item social">
-                            <a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
-                        </li>
-						<li class="nav-item social">
-                            <a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
-                        </li>
-                        <li class="nav-item social">
-                            <a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
-                        </li>
-                    </ul>
-
-                    <!-- Navbar Toggle -->
-                    <ul class="navbar-nav toggle">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#menu">
-                                <i class="icon-menu m-0"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
+            <div id="navbar-placeholder"></div>
         </header>
+
+        <script>
+            fetch('/assets/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+        </script>
 		
 		<!-- Content -->
         <section id="content" class="section-1 body-mode-dark single">
@@ -168,41 +104,16 @@
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="section-4 odd">
-            <div class="container">
-				<div class="row">
-					<div class="col-12 col-md-6 align-self-start text-center text-md-left">
-						<div class="row intro">
-							<div class="col-12 p-0">
+        <!-- Include external contact section -->
+        <div id="contact-placeholder"></div>
+        <script>
+            fetch('/assets/contact.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('contact-placeholder').innerHTML = data;
+                });
+        </script>
 
-								<div class="step-title">
-									<h2 class="header-color">Contact</h2>
-									<p>Want to get in contact with me?</p>
-									<h5 class="odd">Email: <i class="alt">benjaminnilsson1997@gmail.com</i></h5>
-									<p>You can also contact me through <br>social media if preferred.</p>
-								</div>
-								
-								<ul class="navbar-nav share-list mt-0 ml-auto">
-									<li class="nav-item">
-										<a href="https://twitter.com/BenNilsson97" class="nav-link" target="_blank"><i class="icon-social-twitter"></i></a>
-									</li>
-									<li class="nav-item">
-										<a href="https://www.linkedin.com/in/benjamin-nilsson/" class="nav-link" target="_blank"><i class="icon-social-linkedin"></i></a>
-									</li>
-									<li class="nav-item">
-										<a href="https://www.youtube.com/KotieDev" class="nav-link" target="_blank"><i class="icon-social-youtube"></i></a>
-									</li>
-									<li class="nav-item">
-										<a href="https://github.com/BenNilsson" class="nav-link" target="_blank"><i class="icon-social-github"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-            </div>
-        </section>
         <!-- #region Global ============================ -->
 
         <!-- Modal [responsive menu] -->
