@@ -25,6 +25,7 @@
 10. Simple Form
 11. Recaptcha
 12. Cookie Notice
+13. Angry Pug Logic
 
 ----------------------------------------------*/
 
@@ -1101,3 +1102,81 @@ jQuery(function ($) {
         })
     }
 })
+
+/*----------------------------------------------
+13. Angry Pug Logic
+----------------------------------------------*/
+
+jQuery(function ($) {
+    'use strict';
+
+    const pugBubble = $('#pug-speech-bubble');
+    const pugImage = $('#angry-pug-image'); // Get the pug image element
+    const cringeProgrammingJokes = [ // Array of cringe programming jokes
+        "Why don't programmers like nature? It has too many bugs.",
+        "Why did the C# developer fall asleep? Because he didn't like Java.",
+        "Did you know C couldn't C#?",
+        "What's the object-oriented way to become wealthy? Inheritance.",
+        "Why did the programmer quit his job? He didn't get arrays.",
+        "There are 10 types of people in the world: those who understand binary, and those who don't.",
+        "Why was the JavaScript developer sad? Because he didn't Node how to Express himself.",
+        "Debugging: Removing the needles from the haystack.",
+        "Why do Java programmers wear glasses? Because they don't C#.",
+        "Algorithm: Word used by programmers when they don't want to explain what they did.",
+        "Have you heard about the new Cray supercomputer? It’s so fast, it completes an infinite loop in 6 seconds.",
+        "Knock, knock. Who's there? Long pause... Java.",
+        "What's a programmer's favorite hangout place? Foo Bar.",
+        "Why did the web developer break up with the graphic designer? They didn't have the same <style>.",
+        "How many programmers does it take to change a light bulb? None – that’s a hardware problem!",
+        "Why was the function sad? Because it never got called.",
+        "What's the first step in understanding recursion? To understand recursion.",
+        "A SQL query walks into a bar, walks up to two tables and asks, 'Can I join you?'",
+        "Why are Assembly programmers always soaking wet? They work below C-level.",
+        "What's the difference between a junior and a senior developer? The senior developer knows why the code works.",
+        "Why did the private classes break up? Because they never saw each other.",
+        "What do you call a programmer from Finland? Nerdic.",
+        "Why was the developer always calm? He had inner loops.",
+        "What's a programmer's favorite type of coffee? Java.",
+        "Why don't scientists trust atoms? Because they make up everything! ...Wait, wrong jokes.",
+        "How do you comfort a JavaScript bug? You console it.",
+        "Why did the Python developer get lost? Because he couldn't find his path.",
+        "What did the router say to the doctor? It hurts when IP."
+    ];
+
+    let currentPhraseIndex = Math.floor(Math.random() * cringeProgrammingJokes.length); // Start with a random index
+    let intervalId = null; // Variable to hold the interval ID
+
+    // Set initial text
+    pugBubble.text(cringeProgrammingJokes[currentPhraseIndex]);
+
+    function changePugText() {
+        let newIndex;
+        do {
+            newIndex = Math.floor(Math.random() * cringeProgrammingJokes.length);
+        } while (newIndex === currentPhraseIndex); // Ensure the new joke is different from the current one
+        currentPhraseIndex = newIndex;
+
+        // Fade out, change text, fade in
+        pugBubble.fadeOut(200, function() {
+            $(this).text(cringeProgrammingJokes[currentPhraseIndex]).fadeIn(200);
+        });
+    }
+
+    function startInterval() {
+        // Clear any existing interval first
+        if (intervalId) {
+            clearInterval(intervalId);
+        }
+        // Start a new interval and store its ID
+        intervalId = setInterval(changePugText, 7000);
+    }
+
+    // Start the initial interval timer
+    startInterval();
+
+    // Add click listener to the pug image
+    pugImage.on('click', function() {
+        changePugText(); // Change text immediately on click
+        startInterval(); // Reset the interval timer
+    });
+});

@@ -40,7 +40,8 @@
 13. Modal
 14. Miscellaneous
 15. Keyframe
-16. All Media Queries
+16. Angry Pug
+17. All Media Queries
 
 ----------------------------------------------*/
 
@@ -49,6 +50,10 @@
 ----------------------------------------------*/
 
 /* #region Reset */
+
+:root {
+    --pug-speech-bubble-bg-color: var(--primary-bg-color-3);
+}
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
@@ -435,6 +440,26 @@ input, select {
     border-radius: 2px;
 }
 
+select {
+    appearance: none; /* Add standard property */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    line-height: 1.2;
+    border-color: var(--primary-l-color);
+    color: var(--primary-t-color);
+}
+
+select:focus {
+    border-color: var(--primary-t-color);
+    color: var(--primary-t-color);
+}
+
+select option {
+    color: #2f323a;
+}
+
 textarea {
     width: 100%;
     height: auto;
@@ -525,25 +550,6 @@ textarea:focus {
 .body-mode-dark textarea:focus {
     border-color: var(--secondary-t-color);
     color: var(--secondary-t-color);
-}
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-    line-height: 1.2;
-    border-color: var(--primary-l-color);
-    color: var(--primary-t-color);
-}
-
-select:focus {
-    border-color: var(--primary-t-color);
-    color: var(--primary-t-color);
-}
-
-select option {
-    color: #2f323a;
 }
 
 hr {
@@ -3790,7 +3796,54 @@ footer .copyright a:not(.btn) {
 }
 
 /*----------------------------------------------
-16. All Media Queries
+16. Angry Pug
+----------------------------------------------*/
+
+#angry-pug-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's above other content */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#angry-pug-image {
+    width: 100px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+#pug-speech-bubble {
+    background-color: var(--pug-speech-bubble-bg-color);
+    color: var(--primary-p-color); /* Adjust text color for contrast */
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-right: 60px; /* Increased margin to move bubble further left */
+    position: relative;
+    max-width: 150px; /* Limit bubble width */
+    text-align: center;
+    font-size: 0.9em;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Slightly softer shadow */
+}
+
+/* Speech bubble tail */
+#pug-speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 10px; /* Adjusted tail position */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--pug-speech-bubble-bg-color);
+}
+
+/*----------------------------------------------
+17. All Media Queries
 ----------------------------------------------*/
 
 /* #region All Media Queries */
@@ -4281,6 +4334,12 @@ footer .copyright a:not(.btn) {
     }
 
     /* #endregion Footer */
+
+    /* #region Angry Pug */
+    #angry-pug-container {
+        display: none; /* Hide the pug on smaller screens */
+    }
+    /* #endregion Angry Pug */
 }
 
 @media (max-width: 576px) {

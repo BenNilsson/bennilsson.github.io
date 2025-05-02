@@ -28,6 +28,7 @@
     
     --primary-color: #1E50BC;
     --secondary-color: #1a8fe3;
+    --pug-speech-bubble-bg-color: var(--primary-bg-color-3);
 }
 
 /* #endregion Root */
