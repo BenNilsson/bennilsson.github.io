@@ -51,10 +51,6 @@
 
 /* #region Reset */
 
-:root {
-    --pug-speech-bubble-bg-color: var(--primary-bg-color-3);
-}
-
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -3792,7 +3788,7 @@ footer .copyright a:not(.btn) {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Behind content, above background */
+    z-index: 1;
 }
 
 /*----------------------------------------------
@@ -3803,43 +3799,68 @@ footer .copyright a:not(.btn) {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
 #angry-pug-image {
-    width: 100px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px;
+    height: auto;
     display: block;
 }
 
 #pug-speech-bubble {
     background-color: var(--pug-speech-bubble-bg-color);
-    color: var(--primary-p-color); /* Adjust text color for contrast */
+    color: var(--primary-p-color);
     padding: 10px 15px;
     border-radius: 15px;
     margin-bottom: 20px;
-    margin-right: 60px; /* Increased margin to move bubble further left */
+    margin-right: 60px;
     position: relative;
-    max-width: 150px; /* Limit bubble width */
+    max-width: 150px;
     text-align: center;
     font-size: 0.9em;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Slightly softer shadow */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Speech bubble tail */
 #pug-speech-bubble::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    right: 10px; /* Adjusted tail position */
+    right: 10px;
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid var(--pug-speech-bubble-bg-color);
+    border-top: 10px solid var(--primary-bg-color-3);
+}
+
+#hide-pug-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 23px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    z-index: 1001;
+    outline: none;
+    transition: background-color 0.2s ease;
+}
+
+#hide-pug-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*----------------------------------------------
@@ -4335,11 +4356,9 @@ footer .copyright a:not(.btn) {
 
     /* #endregion Footer */
 
-    /* #region Angry Pug */
     #angry-pug-container {
-        display: none; /* Hide the pug on smaller screens */
+        display: none;
     }
-    /* #endregion Angry Pug */
 }
 
 @media (max-width: 576px) {

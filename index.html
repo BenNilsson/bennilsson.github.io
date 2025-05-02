@@ -404,6 +404,7 @@
         <div id="angry-pug-container">
             <div id="pug-speech-bubble">What are you looking at?</div>
             <img src="assets/images/pug.png" alt="Angry Pug" id="angry-pug-image">
+            <button id="hide-pug-button" aria-label="Hide Pug">X</button>
         </div>
 
         <!-- #region Global ============================ -->
@@ -453,6 +454,12 @@
         <script src="assets/js/vendor/shuffle.min.js"></script>
         <script src="assets/js/vendor/particles.min.js"></script>
         <script src="assets/js/main.js"></script>
+
+        <script>
+            document.getElementById('hide-pug-button').addEventListener('click', function() {
+                document.getElementById('angry-pug-container').style.display = 'none';
+            });
+        </script>
 
         <!-- #endregion Global ========================= -->
 
