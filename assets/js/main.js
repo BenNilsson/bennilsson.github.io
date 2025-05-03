@@ -593,31 +593,29 @@ jQuery(function ($) {
 
     'use strict';
 
-    $('.filter-section').each(function(index) {
-
-        var count = index + 1;
-
-        $(this).find('.filter-items').removeClass('filter-items').addClass('filter-items-'+count);
-        $(this).find('.filter-item').removeClass('filter-item').addClass('filter-item-'+count);
-        $(this).find('.filter-sizer').removeClass('filter-sizer').addClass('filter-sizer-'+count);
-        $(this).find('.btn-filter-item').removeClass('btn-filter-item').addClass('btn-filter-item-'+count);
-        
+    // Initialize Shuffle for each filter section
+    $('.filter-section').each(function() {
         var Shuffle = window.Shuffle;
-        var Filter  = new Shuffle(document.querySelector('.filter-items-'+count), {
-            itemSelector: '.filter-item-'+count,
-            sizer: '.filter-sizer-'+count,
-            buffer: 1,
-        })
-    
-        $('.btn-filter-item-'+count).on('change', function (e) {
-    
-            var input = e.currentTarget;
-            
-            if (input.checked) {
-                Filter.filter(input.value);
-            }
-        })
-    })
+        var element = $(this).find('.filter-items')[0]; // Get the DOM element
+        var sizer = $(this).find('.filter-sizer')[0];   // Get the sizer DOM element
+
+        // Ensure the elements exist before initializing
+        if (element) {
+            var Filter = new Shuffle(element, {
+                itemSelector: '.filter-item',
+                sizer: sizer, // Use the sizer element
+                buffer: 1,
+            });
+
+            // Filter button logic
+            $(this).find('.btn-filter-item').on('change', function (e) {
+                var input = e.currentTarget;
+                if (input.checked) {
+                    Filter.filter(input.value);
+                }
+            });
+        }
+    });
 })
 
 /*----------------------------------------------

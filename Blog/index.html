@@ -69,88 +69,126 @@
         </script>
 
 		<!-- Blog -->
-        <section id="blog" class="section-4 showcase blog-grid masonry news">
-			<div class="container">
-				<div class="row intro">
-					<div class="col-12">
-						<h1 data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body" class="title effect-static-text">Blogs</h1>
-						<p data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body">Blogs are a great way of showcasing my research intersets or concluding projects.</br>
-						Below you can find my featured blogs.</p>
-					</div>
-				</div>
-			</div>
-			
-            <div data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body" class="container">
-                <div class="row content blog-grid masonry">
-                    <main class="col-12 p-0">
-                        <div class="bricklayer items columns-3">
-
-
-                            <!-- Animation System -->
-                            <div class="card p-0 text-center item">
-                                <a href="animationsystem.html">
-                                    <div class="image-over">
-                                        <img src="../assets/images/Blog-AnimationSystem/thumbnail.png" alt="Animation System Image">
-                                    </div>
-                                    <div class="card-caption col-12 p-0">
-                                        <div class="card-body">
-                                            <h4>Making a 2D Layered Animation System</h4>
-                                            <p>May 10, 2024</p>
-                                        </div>
-                                    </div>
-                                </a>
+        <section id="blog" class="section-4 showcase blog-grid masonry news filter-section">
+            <div class="container">
+                <div class="row intro">
+                    <div class="col-12">
+                        <h1 data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body" class="title effect-static-text">Blogs</h1>
+                        <p data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body">Blogs are a great way of showcasing my research intersets or concluding projects.<br>
+                        Below you can find my featured blogs.</p>
+                    </div>
+                </div>
+                <!-- Filter Bar -->
+                <div class="row justify-content-center text-center">
+                    <div class="col-12">
+                        <h5 class="mb-4 text-primary">Filter Blogs</h5> <!-- Added text-primary class -->
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <div class="btn-group">
+                                <label class="btn active">
+                                    <input type="radio" value="all" checked class="btn-filter-item">
+                                    <span>All</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="gamedev" class="btn-filter-item">
+                                    <span>Game Dev</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="tutorial" class="btn-filter-item">
+                                    <span>Tutorial</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="unity" class="btn-filter-item">
+                                    <span>Unity</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="csharp" class="btn-filter-item">
+                                    <span>C#</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="cplusplus" class="btn-filter-item">
+                                    <span>C++</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="devlog" class="btn-filter-item">
+                                    <span>Devlog</span>
+                                </label>
+                                <label class="btn">
+                                    <input type="radio" value="personal" class="btn-filter-item">
+                                    <span>Personal</span>
+                                </label>
                             </div>
-
-                            <!-- Learning How To Make Music With No Experience -->
-                            <div class="card p-0 text-center item">
-                                <a href="learningmusic.html">
-                                    <div class="image-over">
-                                        <img src="../assets/images/blog-music/questsystemthumbnail.png" alt="Quest System Image">
-                                    </div>
-                                    <div class="card-caption col-12 p-0">
-                                        <div class="card-body">
-                                            <h4>Learning How To Make Game Music With No Experience</h4>
-                                            <p>October 20, 2023</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Quest System in Unity -->
-                            <div class="card p-0 text-center item">
-                                <a href="unity-questsystem.html">
-                                    <div class="image-over">
-                                        <img src="../assets/images/tutorial-questsystem/questsystemthumbnail.png" alt="Quest System Image">
-                                    </div>
-                                    <div class="card-caption col-12 p-0">
-                                        <div class="card-body">
-                                            <h4>Tutorial - Quest System in Unity</h4>
-                                            <p>December 18, 2021</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Studying Abroad -->
-                            <div class="card p-0 text-center item">
-                                <a href="blog-post-studyingabroad.html">
-                                    <div class="image-over">
-                                        <img src="../assets/images/airplane.jpg" alt="Airplane Image">
-                                    </div>
-                                    <div class="card-caption col-12 p-0">
-                                        <div class="card-body">
-                                            <h4>Studying Abroad - My Experience</h4>
-                                            <p>April 29, 2020</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
                         </div>
-                    </main>
+                    </div>
                 </div>
             </div>
-			
+            <div data-aos="zoom-in" data-aos-delay="50" data-aos-anchor="body" class="container">
+                <div class="row filter-items">
+                    <!-- Animation System -->
+                    <div class="col-12 col-md-6 col-lg-4 item filter-item mb-4" data-groups='["gamedev","cplusplus","devlog"]'>
+                        <div class="card p-0 text-center">
+                            <a href="animationsystem.html">
+                                <div class="image-over">
+                                    <img src="../assets/images/Blog-AnimationSystem/thumbnail.png" alt="Animation System Image">
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4>Making a 2D Layered Animation System</h4>
+                                        <p>May 10, 2024</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Learning How To Make Music With No Experience -->
+                    <div class="col-12 col-md-6 col-lg-4 item filter-item mb-4" data-groups='["personal","gamedev"]'>
+                        <div class="card p-0 text-center">
+                            <a href="learningmusic.html">
+                                <div class="image-over">
+                                    <img src="../assets/images/blog-music/questsystemthumbnail.png" alt="Quest System Image">
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4>Learning How To Make Game Music With No Experience</h4>
+                                        <p>October 20, 2023</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Quest System in Unity -->
+                    <div class="col-12 col-md-6 col-lg-4 item filter-item mb-4" data-groups='["gamedev","tutorial","unity","csharp"]'>
+                        <div class="card p-0 text-center">
+                            <a href="unity-questsystem.html">
+                                <div class="image-over">
+                                    <img src="../assets/images/tutorial-questsystem/questsystemthumbnail.png" alt="Quest System Image">
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4>Tutorial - Quest System in Unity</h4>
+                                        <p>December 18, 2021</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Studying Abroad -->
+                    <div class="col-12 col-md-6 col-lg-4 item filter-item mb-4" data-groups='["personal"]'>
+                        <div class="card p-0 text-center">
+                            <a href="blog-post-studyingabroad.html">
+                                <div class="image-over">
+                                    <img src="../assets/images/airplane.jpg" alt="Airplane Image">
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <h4>Studying Abroad - My Experience</h4>
+                                        <p>April 29, 2020</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Include external contact section -->
