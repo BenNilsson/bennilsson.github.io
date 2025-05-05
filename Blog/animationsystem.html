@@ -1747,20 +1747,5 @@ public:
         <script src="../assets/js/main.js"></script>
 
         <!-- #endregion Global ========================= -->
-
-        <div style="margin-top:2em;font-size:1.1em;color:#888;">
-            <span id="view-count"></span>
-        </div>
-        <script>
-        (function() {
-            const pageKey = location.pathname.replace(/\//g, '_');
-            fetch(`https://api.countapi.xyz/hit/bennilsson.github.io${pageKey}`)
-              .then(res => res.json())
-              .then(res => {
-                document.getElementById('view-count').innerText = res.value + ' views';
-              });
-        })();
-        </script>
-
     </body>
 </html>
