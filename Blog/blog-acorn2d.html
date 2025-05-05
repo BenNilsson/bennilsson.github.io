@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- ==============================================
+    Basic Page Needs
+    =============================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+
+    <title>Ben Nilsson - Acorn2D</title>
+
+    <meta name="description" content="Computer Games Developer. I am a Danish aspiring games developer and content creator based in the UK. Currently studying at Staffordshire University.">
+    <meta name="subject" content="Computer Games Developer. I am a Danish aspiring games developer and content creator based in the UK. Currently studying at Staffordshire University.">
+
+    <!-- ==============================================
+    Favicons
+    =============================================== -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/apple-touch-icon-114x114.png">
+
+    <!-- ==============================================
+    Vendor Stylesheet
+    =============================================== -->
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/slider.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/vendor/icons.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/animation.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/gallery.min.css">
+
+    <!-- ==============================================
+    Custom Stylesheet
+    =============================================== -->
+    <link rel="stylesheet" href="../assets/css/default.css">
+    <link rel="stylesheet" href="../assets/css/theme-light-blue.css">
+    <link rel="stylesheet" href="../assets/css/theme-settings.css">
+
+    <!-- =====================================
+    Custom Code Highlighting
+    ========================= -->
+    <link rel="stylesheet" href="../assets/highlight/styles/rider.dark.css">
+    <script src="../assets/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- ==============================================
+    Theme Settings
+    =============================================== -->
+    <style>
+        .class {
+            color: #f4b64d;
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q4CV70N8Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0Q4CV70N8Q');
+    </script>
+
+</head>
+
+    <body class="theme-mode-dark">
+
+        <!-- Include external navbar -->
+        <header id="header">
+            <div id="navbar-placeholder"></div>
+        </header>
+
+        <script>
+            fetch('/assets/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+        </script>
+		
+		<!-- Content -->
+        <section id="content" class="section-1 body-mode-dark single">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Main -->
+                    <main class="col-12 p-0">
+                        <div class="row">
+                            <div class="col-12 align-self-center">
+                                <h2 class="mt-0 ml-0 header-color">Acorn2D - A Custom Game Engine</h2>
+
+                                <!-- Post Holder -->
+                                <ul class="post-holder">
+                                    <li class="post-meta-item">
+                                        <time class="date"><span class="posted-on">Posted on <time class="entry-date published updated header-color">April 5, 2025</time></span></time>
+                                    </li>
+                                </ul>
+
+                                <p>This blog is going to introduce Acorn 2D, a game engine made by myself and <a href="https://deadmonstor.github.io/" target="_blank">Joshua Mobley</a>.
+                                Acorn 2D is a custom engine built using C++ from scratch. It uses OpenGL for rendering and some other libraries for things like hot-reloading, math, logging, mod support, and profiling.
+                                The engine also has multiplayer support. Multiplayer was the last part we worked on so it still needs work in order to be easy to use.</p>
+                                
+                                <h3 class="mt-0 ml-0 header-color">Why a Custom Engine?</h3>
+                                <p>I am usually against making anything custom when it comes to making games unless what you need to create cannot be made without any custom work.
+                                     For indie development, this is definitely not something I would recommend. So why did we decide to make a custom engine?
+                                      During our time at university, we were given an assignment where we had to make a game engine and then a game within this. When Josh started this assignment, I had already
+                                      done it the year before. However, watching him work on this made us both want to see what we could create with more time. It was a learning opportunity for both of us.
+                                       We decided to design a simple game and see how far we could get with a custom engine.
+                                </p>
+
+                                <h3 class="mt-0 ml-0 header-color">The Engine</h3>
+                                <p>Acorn 2D is set up using a static library. We have two other projects associated with the engine. 
+                                Firstly, we have a game project which is linked to the engine. This is where we would work on the game and test any engine features. 
+                                Secondly, we have a project which is used for our editor. This editor never really saw the light of day but it was fun to create.
+                                </p>
+                                <p>The engine features sprite rendering (OpenGL), custom rendering layers, render axis ordering, an event system, logging, an <a href="./animationsystem.html" target="_blank">animation system</a> that supports layers and event, mod support using lua scripts, 
+                                basic UI, scene management, hot-reloading for data types such as sprites, optional update loops for objects, and even multiplayer.
+                                </p>
+                                <p>Below is a video that showcases small pieces of Acorn 2D:</p>
+                                <video width="800" height="450" controls muted>
+                                    <source src="../assets/videos/blog-acorn2d/Acorn2DTestProjectShowcase.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                <br/><p></p>
+                                <h3 class="mt-0 ml-0 header-color">Tools Used</h3>
+                                <p>For Acorn2D, we have used a few libraries to help us get to the right path. We would be crazy if we tried to do everything ourselves so we didn't.</p>
+                                <h4 class="mt-0 ml-0 scroll-area header-color">Aixlog</h4>
+                                <p><a href="https://github.com/badaix/aixlog" target="_blank">Aixlog</a> is a C++ logging library that we used to make our console neat. It helps us append stack traces to make it easier to see where things have gone or right.
+                                    It is a simple library and is quite efficient. Below is an example of what our logs look like with our configuration:
+                                </p>
+                                <!-- Image -->
+                                <div class="gallery" style="margin-top:15px;">
+                                    <a href="../assets/images/blog-acorn2d/aixlogexample.png">
+                                        <img src="../assets/images/blog-acorn2d/aixlogexample.png" style="width:75%;">
+                                    </a>
+                                </div>
+                                <p></p>
+
+                                <h4 class="mt-0 ml-0 scroll-area header-color">Tracy</h4>
+                                <p><a href="https://github.com/wolfpld/tracy" target="_blank">Tracy</a> is a realtime profiler that we used to figure out our performance issues.
+                                 Using Tracy, we can add manual "ZoneScopes" into our code which defines a starting point for a new profiling sample. This, combined with the GUI provided made it super efficient to visually see
+                                where we could improve code. Josh used this a lot when he was writing the renderer.</p>
+
+                                <h4 class="mt-0 ml-0 scroll-area header-color">Sol2</h4>
+                                <p>Josh wanted mod support from the start. We both agreed that if our game's resources were data driven and the engine had custom hooks for scripting, anyone could make the game awesome. 
+                                    He decided to use <a href="https://github.com/ThePhD/sol2" target="_blank">Sol2</a> which is a C++ wrapper for lua. This allows us to expose our engine to lua and allow users to write their own scripts.
+                                </p>
+                                <p>The game engine searches for any lua scripts when starting up and applies them to the game. Josh made it so that every hook combines which means you could technically write libraries for other modders to use.
+                                    All lua scripts can be hot-reloaded which means you can change them while the game is running. This is a great feature for modding as it allows you to test things without restarting the game.
+                                </p>
+                                <h4 class="mt-0 ml-0 scroll-area header-color">Steam Networking</h4>
+                                <p>Steam is our primary use for networking. This uses steam networking sockets to send messages between the client and the server. For test project, we had movement, the generation, and the health of trees networked.
+                                    This means that destroying a tree would also destroy it for other players.
+                                </p>
+                                <h4 class="mt-0 ml-0 scroll-area header-color">Protobufs</h4>
+                                <p>Protobufs was used to serialize any data including network packages. This made is super simple for the game and engine to know what messages were without having to include a shared project. With the use of protobufs, we
+                                    could also have made lua scripts accessible to networking, allowing modders to sync their content between players.
+                                </p>
+                                <h4 class="mt-0 ml-0 scroll-area header-color">Other</h4>
+                                <p>Above were the main external libraries used. We obviously still had to write our own implementation for most of them since a library doesn't do all the work for you.
+                                    However, besides those, we also used a few minor parts such as GLFW, GLM, Freetype, and ImGui.
+                                </p>
+                                <p></p>
+                                
+                                <h3 class="mt-0 ml-0 header-color">My Contributions</h3>
+                                <p>I have talked a lot about Acorn, but what exactly did I do? This is a two man operation so we have given each other input on most parts, sometimes teaming up. However, below are my main contributions:</p>
+                                <ul>
+                                    <li>Event system.</li>
+                                    <li>Input.</li>
+                                    <li>Scene management. Although this was later a joined effort to resolve bugs.</li>
+                                    <li>Timer manager. This includes being able to call code in x time.</li>
+                                    <li>2D physics.</li>
+                                    <li>Animation system with layers and animation events.</li>
+                                    <li>Acorn Editor.</li>
+                                    <li>Game design for test project and gameplay, including main menu, the player, trees, island generation, the inventory, interaction, items, and the chest.</li>
+                                    <li>Basic UI system.</li>
+                                </ul>
+                                <br/><p></p>
+
+                                <h3 class="mt-0 ml-0 header-color">What's Next?</h3>
+                                <p>Acorn2D is an engine that we worked on quite a while ago and as of today, it currently has not received any updates for months. This is because our focus has shifted to other projects. 
+                                    Although we loved working on this engine, I doubt that we will continue too much. It was a fun learning experience and we ended up with a solid engine.
+                                     We may revisit this in the future, but for now, we are focusing on other projects.
+                                </p>
+                            </div>
+                        </div>        
+                    </main>
+                </div>
+            </div>
+        </section>
+
+        <!-- Include external contact section -->
+        <div id="contact-placeholder"></div>
+        <script>
+            fetch('/assets/contact.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('contact-placeholder').innerHTML = data;
+                });
+        </script>
+
+        <!-- #region Global ============================ -->
+
+        <!-- Modal [responsive menu] -->
+        <div id="menu" class="p-0 modal fade" role="dialog" aria-labelledby="menu" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-slideout" role="document">
+                <div class="modal-content full">
+                    <div class="modal-header" data-dismiss="modal">
+                        Menu <i class="icon-close"></i>
+                    </div>
+                    <div class="menu modal-body">
+                        <div class="row w-100">
+                            <div class="items p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                            <div class="contacts p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll [to top] -->
+        <div id="scroll-to-top" class="scroll-to-top">
+            <a href="#header" class="smooth-anchor">
+                <i class="icon-arrow-up"></i>
+            </a>
+        </div>        
+
+        <!-- ==============================================
+        Vendor Scripts
+        =============================================== -->
+        <script src="../assets/js/vendor/jquery.min.js"></script>
+        <script src="../assets/js/vendor/jquery.easing.min.js"></script>
+        <script src="../assets/js/vendor/jquery.inview.min.js"></script>
+        <script src="../assets/js/vendor/popper.min.js"></script>
+        <script src="../assets/js/vendor/bootstrap.min.js"></script>
+        <script src="../assets/js/vendor/ponyfill.min.js"></script>
+        <script src="../assets/js/vendor/slider.min.js"></script>
+        <script src="../assets/js/vendor/animation.min.js"></script>
+        <script src="../assets/js/vendor/progress-radial.min.js"></script>
+        <script src="../assets/js/vendor/bricklayer.min.js"></script>
+        <script src="../assets/js/vendor/gallery.min.js"></script>
+        <script src="../assets/js/vendor/shuffle.min.js"></script>
+        <script src="../assets/js/vendor/particles.min.js"></script>
+        <script src="../assets/js/main.js"></script>
+
+        <!-- #endregion Global ========================= -->
+
+    </body>
+</html>
